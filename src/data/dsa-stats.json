@@ -1,0 +1,30 @@
+[
+    {
+        "platform": "LeetCode",
+        "problemsSolved": 327,
+        "rating": "Top 15%",
+        "link": "https://leetcode.com/anuj-yd",
+        "color": "#FFA116"
+    },
+    {
+        "platform": "GeeksForGeeks",
+        "problemsSolved": 124,
+        "rating": "DSA Specialized",
+        "link": "https://auth.geeksforgeeks.org/user/anuj-yd",
+        "color": "#2F8D46"
+    },
+    {
+        "platform": "HackerRank",
+        "problemsSolved": 142,
+        "rating": "Verified Developer",
+        "link": "https://hackerrank.com/anuj-yd",
+        "color": "#2EC866"
+    },
+    {
+        "platform": "CodeChef",
+        "problemsSolved": 117,
+        "rating": "1441 Rating",
+        "link": "https://www.codechef.com/users/anujyadav23",
+        "color": "#5B4638"
+    }
+]

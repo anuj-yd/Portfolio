@@ -1,0 +1,26 @@
+[
+    {
+        "title": "HackerRank Software Engineer Intern Certification",
+        "description": "Verified certification demonstrating proficiency in software engineering fundamentals.",
+        "date": "2023",
+        "icon": "📜"
+    },
+    {
+        "title": "Java (Basic) Certified",
+        "description": "Certified by HackerRank for core Java programming skills.",
+        "date": "2023",
+        "icon": "☕"
+    },
+    {
+        "title": "700+ DSA Problems Solved",
+        "description": "Milestone achieved across LeetCode, GFG, and CodeChef.",
+        "date": "2024",
+        "icon": "🚀"
+    },
+    {
+        "title": "Codechef 3-Star Coder",
+        "description": "Achieved a rating of 1441 and consistently performed in division contests.",
+        "date": "2023",
+        "icon": "⭐"
+    }
+]
