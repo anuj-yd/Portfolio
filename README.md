@@ -9,6 +9,10 @@ A modern, animated, and responsive developer portfolio built with React + Vite. 
 - Theme toggle (light/dark)
 - Rich motion and interactive UI
 
+## Live Demo
+
+Deployed URL: `https://your-portfolio.vercel.app`
+
 ## Screenshots
 
 ### Home
