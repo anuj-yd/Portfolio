@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX, HiMoon, HiSun } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 import BouncyText from '../ui/BouncyText';
+import ThemeSwitch from '../ui/ThemeSwitch';
 
 const navLinks = [
     { name: 'Home', to: 'home' },
@@ -87,15 +88,11 @@ const Navbar = () => {
                             </motion.div>
                         ))}
                     </div>
-                    <button
-                        type="button"
-                        onClick={toggleTheme}
-                        className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-3 py-2 rounded-full border-2 border-black bg-white/70 text-text-primary shadow-[2px_2px_0px_#1A1A1A] hover:-translate-y-0.5 transition-transform"
-                        aria-label="Toggle theme"
-                    >
-                        {theme === 'dark' ? <HiSun size={14} /> : <HiMoon size={14} />}
-                        {theme === 'dark' ? 'Light' : 'Dark'}
-                    </button>
+                    <ThemeSwitch
+                        checked={theme === 'dark'}
+                        onChange={toggleTheme}
+                        ariaLabel="Toggle theme"
+                    />
                 </div>
 
                 {/* Mobile Toggle */}

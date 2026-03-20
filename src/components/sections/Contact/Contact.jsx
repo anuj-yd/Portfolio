@@ -176,8 +176,8 @@ const Contact = () => {
                                         const isHalf = rating === value - 0.5;
                                         return (
                                             <div key={value} className="relative w-6 h-6">
-                                                {/* Base outline */}
-                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute inset-0">
+                                                {/* Base filled (beige) */}
+                                                <svg width="20" height="20" viewBox="0 0 24 24" className="absolute inset-0" fill="#E7D4B5">
                                                     <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9" />
                                                 </svg>
 
@@ -189,10 +189,7 @@ const Contact = () => {
                                                         viewBox="0 0 24 24"
                                                         className="absolute inset-0"
                                                         fill="#F4C430"
-                                                        stroke="#1A1A1A"
-                                                        strokeWidth="1.5"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
+                                                        stroke="none"
                                                         style={isHalf ? { clipPath: 'inset(0 50% 0 0)' } : undefined}
                                                     >
                                                         <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9" />

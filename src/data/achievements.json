@@ -2,21 +2,41 @@
   {
     "title": "Completed Graph Camp by Algo University",
     "description": "Achieved Hall of Fame and solved 15+ competitive programming graph problems.",
+    "notes": [
+      "Focused on graph theory patterns and shortest path techniques.",
+      "Solved curated sets of advanced graph problems.",
+      "Ranked among top performers in the camp."
+    ],
     "date": "Nov'25"
   },
   {
     "title": "5-Star Rating in Problem Solving (HackerRank)",
     "description": "Demonstrates strong algorithmic and logical thinking skills.",
+    "notes": [
+      "Earned 5-star badge through consistent practice.",
+      "Strong performance across core DSA categories.",
+      "Reflects competitive programming readiness."
+    ],
     "date": "Sep'25"
   },
   {
     "title": "Solved 300+ DSA Problems",
     "description": "LeetCode, HackerRank, and GeeksforGeeks.",
+    "notes": [
+      "Regular practice across multiple platforms.",
+      "Covers arrays, graphs, DP, and trees.",
+      "Improved speed and accuracy in contests."
+    ],
     "date": "Jul'25"
   },
   {
     "title": "Earned 10+ Skill Badges on MongoDB Platforms",
     "description": "MongoDB Atlas & MongoDB University; strong database design and CRUD skills.",
+    "notes": [
+      "Hands-on completion of MongoDB University tracks.",
+      "Applied schema design and aggregation pipelines.",
+      "Showcases practical database expertise."
+    ],
     "date": "Jun'25"
   }
 ]

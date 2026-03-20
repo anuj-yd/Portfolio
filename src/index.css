@@ -310,6 +310,16 @@
   transform: rotateY(180deg);
 }
 
+/* === Achievement Sliding Stack === */
+.ach-stack {
+  min-height: 300px;
+}
+
+.ach-slide {
+  position: absolute;
+  inset: 0;
+}
+
 
 /* === Animations === */
 @keyframes float {
