@@ -1,10 +1,13 @@
-import React from 'react';
+﻿import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { profile } from '../../../data/profile';
 import ProjectCard from './ProjectCard';
+import ProjectCaseStudyModal from './ProjectCaseStudyModal';
 import BouncyText from '../../ui/BouncyText';
 
 const Projects = () => {
+    const [selectedProject, setSelectedProject] = useState(null);
+
     return (
         <section id="projects" className="py-10 relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
@@ -25,7 +28,7 @@ const Projects = () => {
                             viewport={{ once: true, amount: 0.1 }}
                             transition={{ duration: 0.8, ease: "power3.out", delay: i * 0.1 }}
                         >
-                            <ProjectCard project={project} />
+                            <ProjectCard project={project} onCaseStudy={() => setSelectedProject(project)} />
                         </motion.div>
                     ))}
                 </div>
@@ -46,10 +49,16 @@ const Projects = () => {
                             boxShadow: "3px 3px 0px #1A535C"
                         }}
                     >
-                        See more on GitHub →
+                        See more on GitHub â†’
                     </a>
                 </motion.div>
             </div>
+
+            <ProjectCaseStudyModal
+                isOpen={!!selectedProject}
+                onClose={() => setSelectedProject(null)}
+                project={selectedProject}
+            />
         </section>
     );
 };

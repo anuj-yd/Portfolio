@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -13,7 +13,7 @@ const FrameCorner = ({ className }) => (
     </svg>
 );
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onCaseStudy }) => {
     return (
         <motion.div
             whileHover={{ y: -8, rotate: -0.5 }}
@@ -90,6 +90,17 @@ const ProjectCard = ({ project }) => {
                         <FaExternalLinkAlt size={12} /> Live
                     </motion.a>
                 </div>
+
+                {project.caseStudy && (
+                    <button
+                        type="button"
+                        onClick={onCaseStudy}
+                        className="mt-4 w-full text-xs font-black uppercase tracking-wider px-4 py-2 rounded"
+                        style={{ border: "2px solid #1A1A1A", boxShadow: "2px 2px 0px #1A1A1A" }}
+                    >
+                        Project Autopsy
+                    </button>
+                )}
             </div>
         </motion.div>
     );

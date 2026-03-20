@@ -1,41 +1,111 @@
-[
-    {
-        "title": "Nivana",
-        "description": "A Self Identifying Mental Health Assessment Tool that helps users evaluate their emotional well-being through guided assessments and personalized insights.",
-        "tech": [
-            "MERN",
-            "GSAP",
-            "Tailwind CSS"
-        ],
-        "github": "https://github.com/anuj-yd/Nivana",
-        "live": "https://nivana.vercel.app/",
-        "image": "/assets/nivana.png"
-    },
-    {
-        "title": "Shortest Path Finder",
-        "description": "Visualizing Dijkstra's algorithm for finding the shortest path in a city using graph data structures.",
-        "tech": [
-            "JavaScript",
-            "HTML5",
-            "Tailwind CSS",
-            "Graphs"
-        ],
-        "github": "https://github.com/anuj-yd/SHORTEST-PATH-FINDER-IN-A-CITY-USING-GRAPHS-DIJKSTRA-S-ALGORITHM",
-        "live": "https://anuj-yd.github.io/SHORTEST-PATH-FINDER-IN-A-CITY-USING-GRAPHS-DIJKSTRA-S-ALGORITHM-/",
-        "image": "/assets/SPF.png"
-    },
-    {
-        "title": "Volunteer Management System",
-        "description": "A robust platform for managing organization volunteers, events, and tracking participation.",
-        "tech": [
-            "PHP",
-            "MySQL",
-            "jQuery",
-            "Tailwind CSS",
-            "HTML5"
-        ],
-        "github": "https://github.com/anuj-yd/Volunteer-management-system",
-        "live": "https://anuj-yd.github.io/Volunteer-management-system/",
-        "image": "/assets/VMS.png"
+﻿[
+  {
+    "title": "Nivana",
+    "description": "A Self Identifying Mental Health Assessment Tool that helps users evaluate their emotional well-being through guided assessments and personalized insights.",
+    "tech": [
+      "MERN",
+      "GSAP",
+      "Tailwind CSS"
+    ],
+    "github": "https://github.com/anuj-yd/Nivana",
+    "live": "https://nivana.vercel.app/",
+    "image": "/assets/nivana.png",
+    "caseStudy": {
+      "problem": "Users need a private, structured way to assess mental wellness and track progress without friction.",
+      "constraints": [
+        "Secure access to sensitive data",
+        "Reliable external API usage",
+        "Modular features that scale"
+      ],
+      "architecture": [
+        "React + Tailwind UI with modular feature pages",
+        "Node/Express API with JWT auth",
+        "MongoDB data model for assessments and history",
+        "Gemini API for self-assessment flows"
+      ],
+      "tradeoffs": [
+        "MERN chosen for faster iteration and full-stack control",
+        "JWT-based auth for stateless, scalable sessions",
+        "Feature modules prioritized over a monolithic flow"
+      ],
+      "results": [
+        "10+ modules built (auth, assessments, dashboards, mood tracking)",
+        "25+ secure REST APIs",
+        "5+ wellness features including journaling and meditation"
+      ]
     }
+  },
+  {
+    "title": "Shortest Path Finder",
+    "description": "Visualizing Dijkstra's algorithm for finding the shortest path in a city using graph data structures.",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "Tailwind CSS",
+      "Graphs"
+    ],
+    "github": "https://github.com/anuj-yd/SHORTEST-PATH-FINDER-IN-A-CITY-USING-GRAPHS-DIJKSTRA-S-ALGORITHM",
+    "live": "https://anuj-yd.github.io/SHORTEST-PATH-FINDER-IN-A-CITY-USING-GRAPHS-DIJKSTRA-S-ALGORITHM-/",
+    "image": "/assets/SPF.png",
+    "caseStudy": {
+      "problem": "Help users understand shortest-path computation through an interactive, visual experience.",
+      "constraints": [
+        "Real-time path updates",
+        "Smooth drag interactions",
+        "Efficient graph traversal"
+      ],
+      "architecture": [
+        "Client-side graph model with adjacency lists",
+        "Dijkstra implementation for shortest path",
+        "UI layer for draggable nodes and live edges"
+      ],
+      "tradeoffs": [
+        "Chose Dijkstra for clarity and correctness",
+        "Optimized adjacency traversal for speed",
+        "Focused on UX clarity over heavy animations"
+      ],
+      "results": [
+        "Real-time path computation",
+        "100+ edge cases validated",
+        "Faster traversal with optimized adjacency lists"
+      ]
+    }
+  },
+  {
+    "title": "Volunteer Management System",
+    "description": "A robust platform for managing organization volunteers, events, and tracking participation.",
+    "tech": [
+      "PHP",
+      "MySQL",
+      "jQuery",
+      "Tailwind CSS",
+      "HTML5"
+    ],
+    "github": "https://github.com/anuj-yd/Volunteer-management-system",
+    "live": "https://anuj-yd.github.io/Volunteer-management-system/",
+    "image": "/assets/VMS.png",
+    "caseStudy": {
+      "problem": "Enable teams to manage volunteers, schedules, and certificates in a single system.",
+      "constraints": [
+        "Secure auth and role handling",
+        "Fast UI for large lists",
+        "Reliable certificate workflows"
+      ],
+      "architecture": [
+        "PHP backend with MySQL data layer",
+        "jQuery-powered admin workflows",
+        "Responsive UI built with Tailwind"
+      ],
+      "tradeoffs": [
+        "PHP chosen for quick server-side delivery",
+        "Lean jQuery UI to avoid heavy framework setup",
+        "Optimized pages over complex client state"
+      ],
+      "results": [
+        "5+ core modules delivered",
+        "30% faster loads",
+        "50% better mobile responsiveness"
+      ]
+    }
+  }
 ]
