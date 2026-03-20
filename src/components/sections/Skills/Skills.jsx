@@ -50,6 +50,8 @@ const Skills = () => {
         ? profile.skills.flatMap(c => c.skills)
         : (profile.skills.find(c => c.category === activeTab)?.skills || []);
 
+    const rowA = displayedSkills;
+
     return (
         <section id="skills" className="py-10 relative overflow-hidden bg-[#FDFCF0]">
             {/* Background Decorative Elements */}
@@ -102,99 +104,84 @@ const Skills = () => {
                     })}
                 </div>
 
-                {/* Skills Grid */}
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={activeTab}
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    >
-                        {displayedSkills.map((skill) => {
-                            const IconComponent = IconsSI[skill.icon] || IconsFA[skill.icon];
-                            // If showing all skills, use a color mapping or fallback for icons
-                            const skillColor = activeTab === 'All Skills' ? '#1A535C' : activeColor;
+                {/* Auto-Moving Skills Cards (with hover effects) */}
+                <div className="skills-marquee-hover">
+                    <div className="overflow-hidden">
+                        <div className="skills-marquee-track animate-marquee">
+                            {[...rowA, ...rowA].map((skill, i) => {
+                                const IconComponent = IconsSI[skill.icon] || IconsFA[skill.icon];
+                                const skillColor = activeTab === 'All Skills' ? '#1A535C' : activeColor;
 
-                            return (
-                                <motion.div
-                                    key={`${activeTab}-${skill.name}`}
-                                    variants={itemVariants}
-                                    whileHover={{ y: -8, rotate: 0.5 }}
-                                    className="bg-white rounded-3xl p-8 relative overflow-hidden group border-[3px] border-[#1A1A1A]"
-                                    style={{
-                                        boxShadow: `8px 8px 0px ${skillColor}`
-                                    }}
-                                >
-                                    {/* Decorative elements */}
-                                    <div
-                                        className="absolute -top-12 -right-12 w-24 h-24 rounded-full opacity-5 group-hover:opacity-10 transition-all duration-500 scale-100 group-hover:scale-150"
-                                        style={{ background: skillColor }}
-                                    />
-                                    <div
-                                        className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full opacity-5 group-hover:opacity-10 transition-all duration-500"
-                                        style={{ background: skillColor }}
-                                    />
-
-                                    <div className="flex justify-between items-end mb-6">
-                                        <div className="flex flex-col">
-                                            <div className="mb-3 text-3xl transition-transform duration-300 group-hover:scale-110" style={{ color: skillColor }}>
-                                                {IconComponent ? <IconComponent /> : <div className="w-8 h-1.5 rounded-full" style={{ background: skillColor }} />}
-                                            </div>
-                                            <h4 className="text-text-primary font-black text-2xl tracking-tight">{skill.name}</h4>
-                                        </div>
-                                        <div className="flex flex-col items-end">
-                                            <span
-                                                className="text-3xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity duration-500"
-                                                style={{ color: skillColor }}
-                                            >
-                                                {skill.proficiency}%
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* ... rest of content */}
-
-
-                                    {/* Progress Bar Container */}
-                                    <div className="relative pt-2">
-                                        <div className="w-full h-4 bg-bg-primary/50 border-2 border-[#1A1A1A] rounded-full overflow-hidden p-[2px]">
-                                            <motion.div
-                                                initial={{ width: 0 }}
-                                                whileInView={{ width: `${skill.proficiency}%` }}
-                                                transition={{ duration: 1.5, ease: "circOut" }}
-                                                viewport={{ once: true }}
-                                                className="h-full rounded-full relative overflow-hidden"
-                                                style={{ background: skillColor }}
-                                            >
-                                                {/* Glossy overlay */}
-                                                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
-
-                                                {/* Animated Shine */}
-                                                <motion.div
-                                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-full"
-                                                    animate={{ x: ['-100%', '100%'] }}
-                                                    transition={{ duration: 2, repeat: Infinity, ease: 'linear', repeatDelay: 1 }}
-                                                />
-                                            </motion.div>
-                                        </div>
-
-                                        {/* Tick marker */}
+                                return (
+                                    <motion.div
+                                        key={`rowA-${skill.name}-${i}`}
+                                        variants={itemVariants}
+                                        whileHover={{ y: -8, rotate: 0.5 }}
+                                        className="bg-white rounded-3xl p-8 relative overflow-hidden group border-[3px] border-[#1A1A1A] min-w-[320px]"
+                                        style={{ boxShadow: `8px 8px 0px ${skillColor}` }}
+                                    >
                                         <div
-                                            className="absolute -top-4 w-4 h-4 bg-[#1A1A1A] rotate-45 group-hover:scale-125 transition-transform duration-300"
-                                            style={{ left: `calc(${skill.proficiency}% - 8px)` }}
+                                            className="absolute -top-12 -right-12 w-24 h-24 rounded-full opacity-5 group-hover:opacity-10 transition-all duration-500 scale-100 group-hover:scale-150"
+                                            style={{ background: skillColor }}
                                         />
-                                    </div>
+                                        <div
+                                            className="absolute -bottom-6 -left-6 w-16 h-16 rounded-full opacity-5 group-hover:opacity-10 transition-all duration-500"
+                                            style={{ background: skillColor }}
+                                        />
 
-                                    <div className="mt-6 flex justify-between items-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                                        <span>PROFICIENCY</span>
-                                        <span style={{ color: skillColor }}>{skill.proficiency > 85 ? 'Expert' : 'Advanced'}</span>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </motion.div>
-                </AnimatePresence>
+                                        <div className="flex justify-between items-end mb-6">
+                                            <div className="flex flex-col">
+                                                <div className="mb-3 text-3xl transition-transform duration-300 group-hover:scale-110" style={{ color: skillColor }}>
+                                                    {IconComponent ? <IconComponent /> : <div className="w-8 h-1.5 rounded-full" style={{ background: skillColor }} />}
+                                                </div>
+                                                <h4 className="text-text-primary font-black text-2xl tracking-tight">{skill.name}</h4>
+                                            </div>
+                                            <div className="flex flex-col items-end">
+                                                <span
+                                                    className="text-3xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity duration-500"
+                                                    style={{ color: skillColor }}
+                                                >
+                                                    {skill.proficiency}%
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="relative pt-2">
+                                            <div className="w-full h-4 bg-bg-primary/50 border-2 border-[#1A1A1A] rounded-full overflow-hidden p-[2px]">
+                                                <motion.div
+                                                    initial={{ width: 0 }}
+                                                    whileInView={{ width: `${skill.proficiency}%` }}
+                                                    transition={{ duration: 1.5, ease: "circOut" }}
+                                                    viewport={{ once: true }}
+                                                    className="h-full rounded-full relative overflow-hidden"
+                                                    style={{ background: skillColor }}
+                                                >
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
+                                                    <motion.div
+                                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-full"
+                                                        animate={{ x: ['-100%', '100%'] }}
+                                                        transition={{ duration: 2, repeat: Infinity, ease: 'linear', repeatDelay: 1 }}
+                                                    />
+                                                </motion.div>
+                                            </div>
+
+                                            <div
+                                                className="absolute -top-4 w-4 h-4 bg-[#1A1A1A] rotate-45 group-hover:scale-125 transition-transform duration-300"
+                                                style={{ left: `calc(${skill.proficiency}% - 8px)` }}
+                                            />
+                                        </div>
+
+                                        <div className="mt-6 flex justify-between items-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                            <span>PROFICIENCY</span>
+                                            <span style={{ color: skillColor }}>{skill.proficiency > 85 ? 'Expert' : 'Advanced'}</span>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     );
