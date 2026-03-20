@@ -1,20 +1,20 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 
 const milestones = [
     {
         year: '2023',
         title: 'Started Coding Journey',
-        description: 'Dived into the world of programming with Java and DSA foundations.',
-        emoji: '🚀',
+        description: 'Started with the basics of Python and built core programming fundamentals.',
+        emoji: '🐍',
         bg: '#F4C430',
         shadow: '#d4a800',
         tag: 'THE BEGINNING',
     },
     {
         year: '2024',
-        title: 'Full Stack Exploration',
-        description: 'Mastered the MERN stack and built several full-stack applications.',
+        title: 'Java & DSA Foundations',
+        description: 'Dived into the world of programming with Java and strong DSA fundamentals.',
         emoji: '⚡',
         bg: '#F4833D',
         shadow: '#c45a10',
@@ -22,9 +22,9 @@ const milestones = [
     },
     {
         year: '2025',
-        title: 'Open Source & Projects',
-        description: 'Contributing to open source and building scalable real-world solutions.',
-        emoji: '🌍',
+        title: 'Full Stack Exploration',
+        description: 'Explored the MERN stack and built full-stack applications end-to-end.',
+        emoji: '🚀',
         bg: '#E8699A',
         shadow: '#b03870',
         tag: 'GOING GLOBAL',

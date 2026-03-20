@@ -12,7 +12,8 @@ export const useEmailJS = () => {
                 from_name: formData.name,
                 from_email: formData.email,
                 message: formData.message,
-                reply_to: formData.email
+                reply_to: formData.email,
+                rating: formData.rating || 'Not provided'
             };
 
             const response = await emailjs.send(

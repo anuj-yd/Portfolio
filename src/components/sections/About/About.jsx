@@ -8,7 +8,7 @@ const About = () => {
     const stats = [
         { label: 'Years of Experience', value: '3', suffix: '+' },
         { label: 'Projects Completed', value: '15', suffix: '+' },
-        { label: 'DSA Problems', value: '300', suffix: '+' },
+        { label: 'DSA Problems', value: '700', suffix: '+' },
         { label: 'Technologies', value: '10', suffix: '+' },
     ];
 
@@ -37,15 +37,16 @@ const About = () => {
                             Passionate developer crafting <span className="text-accent-teal italic">digital experiences</span>
                         </h3>
                         <p className="text-lg text-text-secondary mb-6 leading-relaxed">
-                            I am a MERN Stack Developer with a deep love for Data Structures and Algorithms.
-                            My journey started with a curiosity for how things work under the hood,
-                            leading me to master full-stack development. I thrive on building
-                            scalable, efficient, and user-centric applications.
+                            I am a MERN Stack Developer who builds full-stack applications with a strong
+                            foundation in Data Structures and Algorithms. I work with React, Node.js,
+                            Express, and MongoDB, and I focus on modular, scalable systems, secure APIs,
+                            and smooth user experiences.
                         </p>
                         <p className="text-lg text-text-secondary mb-10 leading-relaxed">
-                            When I'm not coding, you'll find me solving problems on LeetCode or
-                            exploring the latest trends in web technology. I believe in continuous
-                            learning and pushing the boundaries of what's possible on the web.
+                            I have delivered projects like a MERN mental health assessment platform,
+                            a shortest-path visualizer using Dijkstra’s algorithm, and a volunteer
+                            management system with authentication and certificates. I enjoy solving
+                            problems, learning fast, and turning ideas into reliable, production-ready products.
                         </p>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">

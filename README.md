@@ -10,10 +10,10 @@ A dynamic, fully responsive, and highly animated personal portfolio website to s
 
 - Modern stack: React 19, Vite, Tailwind CSS v4
 - Rich motion: Framer Motion, GSAP, Anime.js
-- Custom UI: animated cursor, smooth scrolling, page transitions
+- Custom UI: smooth scrolling, page transitions
 - Sections: Hero, About, Skills, Projects, DSA, Certifications, Contact
 - Chatbot: floating CV assistant that answers portfolio questions
-- Contact form: EmailJS integration
+- Contact form: EmailJS integration + star rating
 - Back-to-top button: quick jump to the Home section
 
 ## Tech Stack
@@ -119,4 +119,5 @@ Anuj Yadav
 ## License
 
 MIT License
+
 

@@ -9,14 +9,15 @@ import BouncyText from '../../ui/BouncyText';
 const Contact = () => {
     const { sendEmail, submitting } = useEmailJS();
     const [status, setStatus] = useState(null);
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [hoverRating, setHoverRating] = useState(null);
+    const [formData, setFormData] = useState({ name: '', email: '', message: '', rating: '' });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const result = await sendEmail(formData);
         if (result.success) {
             setStatus('Message sent successfully! 🚀');
-            setFormData({ name: '', email: '', message: '' });
+            setFormData({ name: '', email: '', message: '', rating: '' });
         } else {
             setStatus('Something went wrong. Please try again.');
         }
@@ -164,6 +165,65 @@ const Contact = () => {
                                     className="w-full bg-bg-primary border border-black/5 rounded-2xl px-5 py-4 text-text-primary focus:outline-none focus:border-accent-teal focus:ring-4 focus:ring-accent-teal/5 transition-all resize-none"
                                     placeholder="Tell me about your project..."
                                 ></textarea>
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-black uppercase tracking-widest text-text-secondary mb-3">Rate This Portfolio</label>
+                                <div className="flex items-center gap-1">
+                                    {[1, 2, 3, 4, 5].map((value) => {
+                                        const rating = hoverRating !== null ? hoverRating : (Number(formData.rating) || 0);
+                                        const isFull = rating >= value;
+                                        const isHalf = rating === value - 0.5;
+                                        return (
+                                            <div key={value} className="relative w-6 h-6">
+                                                {/* Base outline */}
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="absolute inset-0">
+                                                    <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9" />
+                                                </svg>
+
+                                                {/* Fill layer */}
+                                                {(isFull || isHalf) && (
+                                                    <svg
+                                                        width="20"
+                                                        height="20"
+                                                        viewBox="0 0 24 24"
+                                                        className="absolute inset-0"
+                                                        fill="#F4C430"
+                                                        stroke="#1A1A1A"
+                                                        strokeWidth="1.5"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        style={isHalf ? { clipPath: 'inset(0 50% 0 0)' } : undefined}
+                                                    >
+                                                        <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9" />
+                                                    </svg>
+                                                )}
+
+                                                {/* Half click area */}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setFormData({ ...formData, rating: String(value - 0.5) })}
+                                                    onMouseEnter={() => setHoverRating(value - 0.5)}
+                                                    onMouseLeave={() => setHoverRating(null)}
+                                                    className="absolute left-0 top-0 h-full w-1/2 bg-transparent"
+                                                    aria-label={`Rate ${value - 0.5} star`}
+                                                />
+                                                {/* Full click area */}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setFormData({ ...formData, rating: String(value) })}
+                                                    onMouseEnter={() => setHoverRating(value)}
+                                                    onMouseLeave={() => setHoverRating(null)}
+                                                    className="absolute right-0 top-0 h-full w-1/2 bg-transparent"
+                                                    aria-label={`Rate ${value} star`}
+                                                />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                                <p className="text-[11px] text-text-secondary mt-2">
+                                    {formData.rating ? `Selected: ${formData.rating}/5` : 'Optional'}
+                                </p>
                             </div>
 
                             <Button type="submit" disabled={submitting} className="w-full">
