@@ -1,10 +1,10 @@
-import { useState, useCallback, useRef } from 'react';
+﻿import { useState, useCallback } from 'react';
 import { profile } from '../../data/profile';
 import { findAnswer } from './matcher';
 
 const INITIAL_MESSAGE = {
   id: 1,
-  text: `👋 Hi! I'm Anuj's virtual assistant. I can answer questions about his skills, projects, education, certifications, and more!\n\nWhat would you like to know?`,
+  text: `Hi! I'm Anuj's virtual assistant. I can answer questions about his skills, projects, education, certifications, and more!\n\nWhat would you like to know?`,
   sender: 'bot',
   timestamp: new Date()
 };
@@ -15,7 +15,6 @@ export const useChatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [hasInteracted, setHasInteracted] = useState(false);
-  const typingTimeoutRef = useRef(null);
 
   const openChat = useCallback(() => {
     setIsOpen(true);
@@ -33,7 +32,7 @@ export const useChatbot = () => {
     });
   }, []);
 
-  const sendMessage = useCallback((userMessage) => {
+  const sendMessage = useCallback(async (userMessage) => {
     const trimmedMessage = userMessage.trim();
     if (!trimmedMessage) return;
 
@@ -48,15 +47,23 @@ export const useChatbot = () => {
     setInputValue('');
     setIsTyping(true);
 
-    // Clear any existing timeout
-    if (typingTimeoutRef.current) {
-      clearTimeout(typingTimeoutRef.current);
-    }
+    const minDelay = 700 + Math.random() * 600;
+    const delayPromise = new Promise(resolve => setTimeout(resolve, minDelay));
 
-    // Simulate typing delay (400–900ms)
-    const delay = 400 + Math.random() * 500;
-    typingTimeoutRef.current = setTimeout(() => {
-      const botReply = findAnswer(trimmedMessage, profile);
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: trimmedMessage })
+      });
+      const data = await response.json();
+
+      await delayPromise;
+
+      const botReply = response.ok && data?.reply
+        ? data.reply
+        : findAnswer(trimmedMessage, profile);
+
       const botMsg = {
         id: Date.now() + 1,
         text: botReply,
@@ -64,8 +71,19 @@ export const useChatbot = () => {
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botMsg]);
+    } catch (error) {
+      await delayPromise;
+      const fallbackReply = findAnswer(trimmedMessage, profile);
+      const botMsg = {
+        id: Date.now() + 1,
+        text: fallbackReply,
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, botMsg]);
+    } finally {
       setIsTyping(false);
-    }, delay);
+    }
   }, []);
 
   const clearMessages = useCallback(() => {

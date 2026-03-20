@@ -10,7 +10,7 @@ const Certifications = () => {
     const [selectedCert, setSelectedCert] = useState(null);
 
     return (
-        <section id="certifications" className="py-10 relative overflow-hidden bg-[#FAF7F0]">
+        <section id="certifications" className="py-10 relative overflow-hidden bg-bg-primary">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary">
@@ -31,7 +31,7 @@ const Certifications = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="relative h-[320px] group [perspective:1200px]"
+                            className="relative h-[470px] group [perspective:1200px]"
                         >
                             <div className="cert-flip-card">
                                 {/* Front */}
@@ -69,6 +69,11 @@ const Certifications = () => {
                                         <p className="text-xs font-bold text-text-secondary uppercase tracking-widest opacity-70">
                                             {cert.issuer}
                                         </p>
+                                        {cert.description && (
+                                            <p className="mt-3 text-xs font-medium text-text-secondary leading-relaxed line-clamp-3">
+                                                {cert.description}
+                                            </p>
+                                        )}
                                     </div>
 
                                     <div
@@ -80,25 +85,27 @@ const Certifications = () => {
 
                                 {/* Back */}
                                 <div
-                                    className="cert-face cert-back rounded-[2rem] p-8 border-[3px] border-[#1A1A1A] text-white"
+                                    className="cert-face cert-back rounded-[2rem] p-8 border-[3px] border-[#1A1A1A] text-text-primary flex flex-col"
                                     style={{
-                                        background: `linear-gradient(135deg, ${cert.color} 0%, #1A1A1A 120%)`,
+                                        background: `linear-gradient(135deg, ${cert.color}26 0%, ${cert.color}10 60%, #ffffff 120%)`,
                                         boxShadow: `8px 8px 0px #1A1A1A`,
                                     }}
                                 >
-                                    <h3 className="text-xl font-black mb-2 uppercase tracking-tight">{cert.title}</h3>
-                                    <div className="text-xs font-black uppercase tracking-[0.2em] opacity-80 mb-5">
-                                        Issued By
+                                    <div>
+                                        <h3 className="text-xl font-black mb-2 uppercase tracking-tight">{cert.title}</h3>
+                                        <div className="text-xs font-black uppercase tracking-[0.2em] opacity-80 mb-5">
+                                            Issued By
+                                        </div>
+                                        <div className="text-lg font-black mb-4">{cert.issuer}</div>
+                                        <div className="text-xs font-black uppercase tracking-[0.2em] opacity-80 mb-2">
+                                            Date
+                                        </div>
+                                        <div className="text-sm font-bold">{cert.date}</div>
                                     </div>
-                                    <div className="text-lg font-black mb-4">{cert.issuer}</div>
-                                    <div className="text-xs font-black uppercase tracking-[0.2em] opacity-80 mb-2">
-                                        Date
-                                    </div>
-                                    <div className="text-sm font-bold mb-8">{cert.date}</div>
 
                                     <button
                                         onClick={() => setSelectedCert(cert)}
-                                        className="w-full inline-flex items-center justify-center gap-2 font-black text-xs uppercase tracking-widest px-5 py-3 bg-white text-black border-2 border-black rounded-xl shadow-[4px 4px 0px #000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
+                                        className="w-full mt-auto inline-flex items-center justify-center gap-2 font-black text-xs uppercase tracking-widest px-5 py-3 bg-white text-black border-2 border-black rounded-xl shadow-[4px 4px 0px #000000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
                                     >
                                         <HiOutlineEye size={16} />
                                         View Certificate

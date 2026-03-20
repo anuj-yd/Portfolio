@@ -1,22 +1,22 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 
 const QUICK_REPLIES = [
-  "What are Anuj's skills? 💻",
-  "Show me his projects 🚀",
-  "What are his achievements? 🏆",
-  "His certifications 📜",
-  "How to contact him? 📬",
-  "Tell me about Nivana 🧘",
-  "His education 🎓",
-  "DSA profiles 📊",
+  "What are Anuj's skills?",
+  "Show me his projects",
+  "What are his achievements?",
+  "His certifications",
+  "How to contact him?",
+  "Tell me about Nivana",
+  "His education",
+  "DSA profiles",
 ];
 
 const QuickReplies = ({ onSelect }) => {
   return (
     <div className="px-3 py-2">
       <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#4A4A4A', fontFamily: "'Outfit', sans-serif" }}>
-        💡 Quick Questions
+        Quick Questions
       </p>
       <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-thin" style={{ scrollbarWidth: 'none' }}>
         {QUICK_REPLIES.map((reply, index) => (

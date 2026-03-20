@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { HiMenuAlt3, HiX, HiMoon, HiSun } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 import BouncyText from '../ui/BouncyText';
 
@@ -18,6 +18,7 @@ const navLinks = [
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [theme, setTheme] = useState('light');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,6 +27,27 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initial = stored || (prefersDark ? 'dark' : 'light');
+        setTheme(initial);
+    }, []);
+
+    useEffect(() => {
+        const root = document.documentElement;
+        if (theme === 'dark') {
+            root.classList.add('theme-dark');
+        } else {
+            root.classList.remove('theme-dark');
+        }
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    };
 
     return (
         <nav className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-full backdrop-blur-3xl shadow-lg ${isScrolled ? 'py-3 bg-white/20' : 'py-5 bg-white/10'} `}>
@@ -43,7 +65,7 @@ const Navbar = () => {
                 </motion.div>
 
                 {/* Desktop Links */}
-                <div className="hidden md:flex items-center gap-10">
+                <div className="hidden md:flex items-center gap-8">
                     <div className="flex gap-5">
                         {navLinks.map((link, i) => (
                             <motion.div
@@ -65,7 +87,15 @@ const Navbar = () => {
                             </motion.div>
                         ))}
                     </div>
-
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-3 py-2 rounded-full border-2 border-black bg-white/70 text-text-primary shadow-[2px_2px_0px_#1A1A1A] hover:-translate-y-0.5 transition-transform"
+                        aria-label="Toggle theme"
+                    >
+                        {theme === 'dark' ? <HiSun size={14} /> : <HiMoon size={14} />}
+                        {theme === 'dark' ? 'Light' : 'Dark'}
+                    </button>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -100,6 +130,18 @@ const Navbar = () => {
                                     {link.name}
                                 </Link>
                             ))}
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    toggleTheme();
+                                    setIsOpen(false);
+                                }}
+                                className="inline-flex items-center justify-center gap-2 text-xs font-black uppercase tracking-widest px-4 py-3 rounded-full border-2 border-black bg-white text-text-primary shadow-[2px_2px_0px_#1A1A1A]"
+                                aria-label="Toggle theme"
+                            >
+                                {theme === 'dark' ? <HiSun size={14} /> : <HiMoon size={14} />}
+                                {theme === 'dark' ? 'Light Theme' : 'Dark Theme'}
+                            </button>
                         </div>
                     </motion.div>
                 )}

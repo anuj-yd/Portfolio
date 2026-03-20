@@ -31,7 +31,7 @@ function App() {
           <Contact />
         </main>
         <footer
-          className="py-10 pb-12 text-center border-t-2 border-black/10 bg-white"
+          className="py-10 pb-12 text-center border-t-2 border-black/10 bg-bg-secondary"
           style={{ fontFamily: "'Outfit', sans-serif" }}
         >
           <div className="flex items-center justify-center gap-3 mb-1">

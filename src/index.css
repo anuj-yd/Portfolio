@@ -26,16 +26,65 @@
   * {}
 
   :root {
-    background-color: #FAF7F0;
-    color: #1A1A1A;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
     scroll-behavior: smooth;
+  }
+
+  .theme-dark {
+    --color-bg-primary: #161a20;
+    --color-bg-secondary: #1d232c;
+    --color-accent-teal: #7ddbe3;
+    --color-accent-gold: #f6d989;
+    --color-accent-coral: #ff9a88;
+    --color-accent-pink: #f3a0c0;
+    --color-accent-orange: #ffc08a;
+    --color-text-primary: #f7f7f7;
+    --color-text-secondary: #d4d4d4;
+  }
+
+  .theme-dark .bg-white {
+    background-color: var(--color-bg-secondary) !important;
+  }
+
+  .theme-dark .bg-white\/10 {
+    background-color: rgba(29, 35, 44, 0.5) !important;
+  }
+
+  .theme-dark .bg-white\/20 {
+    background-color: rgba(29, 35, 44, 0.65) !important;
+  }
+
+  .theme-dark .bg-white\/50 {
+    background-color: rgba(29, 35, 44, 0.8) !important;
+  }
+
+  .theme-dark .bg-white\/70 {
+    background-color: rgba(29, 35, 44, 0.9) !important;
+  }
+
+  .theme-dark .bg-white\/90 {
+    background-color: rgba(29, 35, 44, 0.95) !important;
+  }
+
+  .theme-dark .border-black,
+  .theme-dark .border-\[\#1A1A1A\] {
+    border-color: var(--color-text-primary) !important;
+  }
+
+  .theme-dark .border-black\/10 {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .theme-dark .chat-window {
+    background-color: #cbd5e1 !important;
   }
 
   body {
     margin: 0;
     overflow-x: hidden;
-    background-color: #FAF7F0;
-    color: #4A4A4A;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
     font-family: "Outfit", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -47,7 +96,7 @@
   h5,
   h6 {
     font-family: "Bricolage Grotesque", sans-serif;
-    color: #1A1A1A;
+    color: var(--color-text-primary);
     font-weight: 800;
     font-style: italic;
   }
@@ -144,7 +193,7 @@
 
   /* === Cards === */
   .card-premium {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-secondary);
     padding: 2rem;
     border-radius: 1.5rem;
     border: 1px solid rgba(0, 0, 0, 0.07);
@@ -158,7 +207,7 @@
   }
 
   .card-retro {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg-secondary);
     padding: 2rem;
     border-radius: 1rem;
     border: 2.5px solid #1A1A1A;
@@ -392,11 +441,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF7F0;
+  background: var(--color-bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1A535C;
+  background: var(--color-accent-teal);
   border-radius: 5px;
-  border: 3px solid #FAF7F0;
+  border: 3px solid var(--color-bg-primary);
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 
 const MessageBubble = ({ message }) => {
@@ -30,15 +30,18 @@ const MessageBubble = ({ message }) => {
     >
       {/* Avatar */}
       <div
-        className="w-7 h-7 rounded-full flex items-center justify-center text-xs flex-shrink-0 mt-0.5 border-2 border-black"
+        className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 border-2 border-black overflow-hidden"
         style={{
           background: isBot
             ? 'linear-gradient(135deg, #1A535C 0%, #F4C430 100%)'
             : 'linear-gradient(135deg, #E8699A 0%, #F4833D 100%)',
-          fontSize: '14px',
         }}
       >
-        {isBot ? '🤖' : '👤'}
+        {isBot ? (
+          <img src="/assets/anuj.png" alt="Anuj" className="w-full h-full object-cover" />
+        ) : (
+          <span className="text-[10px] font-black text-white">YOU</span>
+        )}
       </div>
 
       {/* Message bubble */}

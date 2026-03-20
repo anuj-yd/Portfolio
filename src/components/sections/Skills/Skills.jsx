@@ -53,7 +53,7 @@ const Skills = () => {
     const rowA = displayedSkills;
 
     return (
-        <section id="skills" className="py-10 relative overflow-hidden bg-[#FDFCF0]">
+        <section id="skills" className="py-10 relative overflow-hidden bg-bg-primary">
             {/* Background Decorative Elements */}
             <div className="absolute top-20 left-10 w-32 h-32 bg-accent-teal/5 rounded-full blur-3xl" />
             <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent-pink/5 rounded-full blur-3xl" />

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+﻿import React, { useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MessageList from './MessageList';
 import QuickReplies from './QuickReplies';
@@ -68,7 +68,7 @@ const ChatWindow = ({ messages, isTyping, inputValue, setInputValue, onSend, onC
         fontFamily: "'Outfit', sans-serif",
       }}
     >
-      {/* ── Header ── */}
+      {/* Header */}
       <div
         className="flex items-center justify-between px-4 py-3 flex-shrink-0 border-b-2 border-black"
         style={{ background: '#1A535C' }}
@@ -76,10 +76,10 @@ const ChatWindow = ({ messages, isTyping, inputValue, setInputValue, onSend, onC
         <div className="flex items-center gap-2.5">
           {/* Bot avatar */}
           <div
-            className="w-9 h-9 rounded-full border-2 border-black flex items-center justify-center text-base flex-shrink-0"
+            className="w-9 h-9 rounded-full border-2 border-black flex items-center justify-center flex-shrink-0 overflow-hidden"
             style={{ background: '#F4C430', boxShadow: '2px 2px 0px #1A1A1A' }}
           >
-            🤖
+            <img src="/assets/anuj.png" alt="Anuj" className="w-full h-full object-cover" />
           </div>
           <div>
             <p className="font-black text-white text-sm leading-tight" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
@@ -87,7 +87,7 @@ const ChatWindow = ({ messages, isTyping, inputValue, setInputValue, onSend, onC
             </p>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="text-xs text-green-300 font-semibold">Online · Always available</span>
+              <span className="text-xs text-green-300 font-semibold">Online • Always available</span>
             </div>
           </div>
         </div>
@@ -118,15 +118,15 @@ const ChatWindow = ({ messages, isTyping, inputValue, setInputValue, onSend, onC
         </div>
       </div>
 
-      {/* ── Messages ── */}
+      {/* Messages */}
       <MessageList messages={messages} isTyping={isTyping} />
 
-      {/* ── Quick Replies ── */}
+      {/* Quick Replies */}
       <div className="flex-shrink-0 border-t border-black/10">
         <QuickReplies onSelect={onSend} />
       </div>
 
-      {/* ── Input footer ── */}
+      {/* Input footer */}
       <form
         onSubmit={handleSubmit}
         className="flex-shrink-0 flex items-center gap-2 px-3 py-3 border-t-2 border-black"

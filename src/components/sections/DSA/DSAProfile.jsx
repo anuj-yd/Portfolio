@@ -9,7 +9,7 @@ const DSAProfile = () => {
     const totalSolved = profile.dsaStats.reduce((acc, curr) => acc + curr.problemsSolved, 0);
 
     return (
-        <section id="dsa" className="py-12 relative overflow-hidden bg-white/50">
+        <section id="dsa" className="py-12 relative overflow-hidden bg-bg-secondary/60">
             {/* Background Decorations */}
             <div className="absolute top-40 right-10 w-64 h-64 bg-accent-teal/5 rounded-full blur-3xl" />
             <div className="absolute bottom-20 left-10 w-48 h-48 bg-accent-gold/5 rounded-full blur-3xl" />
