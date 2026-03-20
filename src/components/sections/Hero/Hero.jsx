@@ -51,10 +51,10 @@ const Hero = () => {
     const lastName = "Yadav";
 
     return (
-        <section id="home" className="relative bg-bg-primary overflow-hidden pt-24 pb-0" style={{ minHeight: 'auto' }}>
+        <section id="home" className="relative bg-bg-primary overflow-hidden pt-20 pb-0" style={{ minHeight: 'auto' }}>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-end w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full">
 
                     {/* ───── LEFT: Name + Greeting ───── */}
                     <div className="order-2 lg:order-1">
@@ -90,6 +90,12 @@ const Hero = () => {
                                 <BouncyText text={lastName} colorOffset={firstName.length} />
                             </div>
                         </h1>
+
+                        {/* Short description (between name and icons) */}
+                        <p className="text-base md:text-lg text-text-secondary font-medium leading-relaxed mb-6 max-w-xl">
+                            <span className="block">I build scalable and efficient software solutions backed by strong data structure fundamentals.</span>
+                            <span className="block">Focused on clean architecture, performance optimization, and solving real-world problems.</span>
+                        </p>
 
                         {/* Social Icons - Below Name with gap */}
                         <div className="flex gap-4 mb-6">
@@ -151,7 +157,7 @@ const Hero = () => {
                     </div>
 
                     {/* ───── RIGHT: Real Photo ───── */}
-                    <div className="order-1 lg:order-2 flex justify-end pr-4">
+                    <div className="order-1 lg:order-2 flex justify-end pr-4 mt-12 lg:mt-12">
                         <div ref={imgRef} className="relative">
                             {/* Spinning dashed ring */}
                             <div className="absolute -inset-8 border-4 border-dashed border-accent-gold rounded-full animate-spin-slow opacity-70 pointer-events-none" />
