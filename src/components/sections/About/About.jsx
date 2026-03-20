@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 import AnimatedCounter from './AnimatedCounter';
 import Timeline from './Timeline';
@@ -26,40 +26,42 @@ const About = () => {
                     <div className="section-divider" />
                 </div>
 
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                     <motion.div
                         initial={false}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.1 }}
-                        className="text-center"
+                        className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-start"
                     >
-                        <h3 className="text-2xl md:text-3xl font-display font-black mb-6 text-text-primary">
-                            Passionate developer crafting <span className="text-accent-teal italic">digital experiences</span>
-                        </h3>
-                        <p className="text-lg text-text-secondary mb-6 leading-relaxed">
-                            I am a MERN Stack Developer who builds full-stack applications with a strong
-                            foundation in Data Structures and Algorithms. I work with React, Node.js,
-                            Express, and MongoDB, and I focus on modular, scalable systems, secure APIs,
-                            and smooth user experiences.
-                        </p>
-                        <p className="text-lg text-text-secondary mb-10 leading-relaxed">
-                            I have delivered projects like a MERN mental health assessment platform,
-                            a shortest-path visualizer using Dijkstra’s algorithm, and a volunteer
-                            management system with authentication and certificates. I enjoy solving
-                            problems, learning fast, and turning ideas into reliable, production-ready products.
-                        </p>
+                        <div className="text-center lg:text-left">
+                            <h3 className="text-2xl md:text-3xl font-display font-black mb-6 text-text-primary">
+                                Passionate developer crafting <span className="text-accent-teal italic">digital experiences</span>
+                            </h3>
+                            <p className="text-lg text-text-secondary mb-6 leading-relaxed">
+                                I am a MERN Stack Developer who builds full-stack applications with a strong
+                                foundation in Data Structures and Algorithms. I work with React, Node.js,
+                                Express, and MongoDB, and I focus on modular, scalable systems, secure APIs,
+                                and smooth user experiences.
+                            </p>
+                            <p className="text-lg text-text-secondary mb-10 leading-relaxed">
+                                I have delivered projects like a MERN mental health assessment platform,
+                                a shortest-path visualizer using Dijkstra's algorithm, and a volunteer
+                                management system with authentication and certificates. I enjoy solving
+                                problems, learning fast, and turning ideas into reliable, production-ready products.
+                            </p>
+                        </div>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
+                        <div className="grid grid-cols-2 gap-4 md:gap-6 justify-items-center">
                             {stats.map((stat, i) => (
                                 <motion.div
                                     key={i}
                                     whileHover={{ y: -6, scale: 1.02 }}
-                                    className="bg-white rounded-2xl p-6 relative overflow-hidden group border-2 border-black"
+                                    className="bg-white rounded-full p-4 relative overflow-hidden group border-2 border-black aspect-square flex items-center justify-center w-40 h-40 md:w-44 md:h-44"
                                     style={{
                                         boxShadow: `8px 8px 0px ${['#F4833D', '#F4C430', '#1A535C', '#E8699A'][i % 4]}`,
                                     }}
                                 >
-                                    <div className="relative z-10">
+                                    <div className="relative z-10 text-center">
                                         <div className="flex items-center justify-center gap-2 mb-2">
                                             <div
                                                 className="w-2.5 h-2.5 rounded-full"

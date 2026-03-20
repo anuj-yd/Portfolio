@@ -26,19 +26,19 @@ const DSAProfile = () => {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                     {/* Platform Cards */}
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
-                        className="grid sm:grid-cols-2 gap-6"
+                        className="grid sm:grid-cols-2 gap-5"
                     >
                         {profile.dsaStats.map((stat, i) => (
                             <motion.div
                                 key={stat.platform}
                                 whileHover={{ y: -10, rotate: i % 2 === 0 ? 0.6 : -0.6 }}
-                                className="bg-white rounded-[2.5rem] p-8 relative overflow-hidden group border-[3.5px] border-[#1A1A1A] flex flex-col items-center text-center"
+                                className="bg-white rounded-[1.75rem] p-5 relative overflow-hidden group border-[3px] border-[#1A1A1A] flex flex-col items-center text-center w-full max-w-[240px] mx-auto"
                                 style={{
                                     boxShadow: `8px 8px 0px ${stat.color}`,
                                 }}
@@ -61,23 +61,23 @@ const DSAProfile = () => {
                                     href={stat.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-xl font-black mb-4 uppercase tracking-widest px-4 py-1 rounded-full text-white transition-all hover:scale-[1.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
-                                    style={{ background: stat.color, border: '2px solid #1A1A1A', boxShadow: '3px 3px 0 #1A1A1A' }}
+                                    className="text-base font-black mb-3 uppercase tracking-widest px-3 py-1 rounded-full text-white transition-all hover:scale-[1.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
+                                    style={{ background: stat.color, border: '2px solid #1A1A1A', boxShadow: '2px 2px 0 #1A1A1A' }}
                                 >
                                     {stat.platform}
                                 </a>
 
-                                <div className="text-6xl font-black text-text-primary mb-1 tracking-tighter" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                <div className="text-4xl font-black text-text-primary mb-1 tracking-tighter" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
                                     {stat.problemsSolved}
                                 </div>
-                                <div className="text-text-secondary text-[10px] font-black uppercase tracking-widest opacity-60">Problems Solved</div>
+                                <div className="text-text-secondary text-[9px] font-black uppercase tracking-widest opacity-60">Problems Solved</div>
 
                                 <div
-                                    className="mt-6 px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-wider border-2 border-[#1A1A1A] bg-white/90"
+                                    className="mt-5 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-wider border-2 border-[#1A1A1A] bg-white/90"
                                     style={{
                                         backgroundColor: `${stat.color}15`,
                                         color: i === 3 ? '#1A1A1A' : stat.color,
-                                        boxShadow: `3px 3px 0px #1A1A1A`
+                                        boxShadow: `2px 2px 0px #1A1A1A`
                                     }}
                                 >
                                     {stat.rating}
@@ -95,20 +95,20 @@ const DSAProfile = () => {
                     </motion.div>
 
                     {/* Chart Area */}
-                    <div className="relative p-10 bg-white rounded-[3rem] border-[4px] border-[#1A1A1A] shadow-[12px 12px 0px #1A535C] overflow-hidden group">
+                    <div className="relative p-8 bg-white rounded-[2.5rem] border-[3px] border-[#1A1A1A] shadow-[10px 10px 0px #1A535C] overflow-hidden group">
                         {/* Decorative Chart Background */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-accent-teal/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-gold/10 rounded-full blur-2xl" />
 
-                        <div className="h-[380px] w-full relative z-10">
+                        <div className="h-[320px] w-full relative z-10">
                             <ResponsiveContainer width="100%" height="100%">
                                 <PieChart>
                                     <Pie
                                         data={chartData}
                                         cx="50%"
                                         cy="50%"
-                                        innerRadius={90}
-                                        outerRadius={140}
+                                        innerRadius={75}
+                                        outerRadius={115}
                                         paddingAngle={10}
                                         stroke="none"
                                         dataKey="value"
@@ -143,12 +143,12 @@ const DSAProfile = () => {
                                     className="relative"
                                 >
                                     {/* Rotating Ring around total */}
-                                    <div className="absolute -inset-10 rounded-full border-2 border-dashed border-gray-100 animate-spin-slow opacity-50" />
+                                    <div className="absolute -inset-8 rounded-full border-2 border-dashed border-gray-100 animate-spin-slow opacity-50" />
 
-                                    <div className="text-6xl font-black text-text-primary leading-none" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                    <div className="text-5xl font-black text-text-primary leading-none" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
                                         {totalSolved}
                                     </div>
-                                    <div className="text-[11px] font-black text-text-secondary uppercase tracking-[0.2em] mt-2 opacity-50">Total<br />Solved</div>
+                                    <div className="text-[10px] font-black text-text-secondary uppercase tracking-[0.2em] mt-2 opacity-50">Total<br />Solved</div>
                                 </motion.div>
                             </div>
                         </div>
