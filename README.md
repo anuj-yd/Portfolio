@@ -13,7 +13,7 @@ A modern, animated, and responsive developer portfolio built with React + Vite. 
 
 ### Home
 
-![Home](../public/assets/home.png)
+![Home](image.png)
 
 The hero section introduces the portfolio with a bold headline, animated accents, and quick visual context about the developer. It’s designed to feel energetic and immediately communicate the tech-forward style of the site.
 
