@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiOutlineMail, HiOutlineLocationMarker } from 'react-icons/hi';
-import { SiLinkedin, SiInstagram, SiWhatsapp } from 'react-icons/si';
+import { SiLinkedin, SiWhatsapp, SiGithub } from 'react-icons/si';
 import { useEmailJS } from '../../../hooks/useEmailJS';
 import Button from '../../ui/Button';
 import BouncyText from '../../ui/BouncyText';
@@ -105,21 +105,22 @@ const Contact = () => {
                             </div>
 
                             <div className="flex items-center gap-6 group">
-                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#E4405F] group-hover:bg-[#E4405F] group-hover:text-white shadow-soft transition-all duration-300">
-                                    <SiInstagram size={24} />
+                                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#24292F] group-hover:bg-[#24292F] group-hover:text-white shadow-soft transition-all duration-300">
+                                    <SiGithub size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-text-secondary text-[10px] font-black uppercase tracking-widest mb-1">Instagram</p>
+                                    <p className="text-text-secondary text-[10px] font-black uppercase tracking-widest mb-1">GitHub</p>
                                     <a
-                                        href="https://instagram.com/ig_anuj_18"
+                                        href="https://github.com/anuj-yd"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-lg text-text-primary hover:text-[#E4405F] transition-colors font-bold font-display"
+                                        className="text-lg text-text-primary hover:text-[#24292F] transition-colors font-bold font-display"
                                     >
-                                        ig_anuj_18
+                                        anuj-yd
                                     </a>
                                 </div>
                             </div>
+
                         </div>
 
                     </motion.div>

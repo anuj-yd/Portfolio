@@ -1,26 +1,22 @@
 [
-    {
-        "title": "HackerRank Software Engineer Intern Certification",
-        "description": "Verified certification demonstrating proficiency in software engineering fundamentals.",
-        "date": "2023",
-        "icon": "📜"
-    },
-    {
-        "title": "Java (Basic) Certified",
-        "description": "Certified by HackerRank for core Java programming skills.",
-        "date": "2023",
-        "icon": "☕"
-    },
-    {
-        "title": "700+ DSA Problems Solved",
-        "description": "Milestone achieved across LeetCode, GFG, and CodeChef.",
-        "date": "2024",
-        "icon": "🚀"
-    },
-    {
-        "title": "Codechef 3-Star Coder",
-        "description": "Achieved a rating of 1441 and consistently performed in division contests.",
-        "date": "2023",
-        "icon": "⭐"
-    }
+  {
+    "title": "Completed Graph Camp by Algo University",
+    "description": "Achieved Hall of Fame and solved 15+ competitive programming graph problems.",
+    "date": "Nov'25"
+  },
+  {
+    "title": "5-Star Rating in Problem Solving (HackerRank)",
+    "description": "Demonstrates strong algorithmic and logical thinking skills.",
+    "date": "Sep'25"
+  },
+  {
+    "title": "Solved 300+ DSA Problems",
+    "description": "LeetCode, HackerRank, and GeeksforGeeks.",
+    "date": "Jul'25"
+  },
+  {
+    "title": "Earned 10+ Skill Badges on MongoDB Platforms",
+    "description": "MongoDB Atlas & MongoDB University; strong database design and CRUD skills.",
+    "date": "Jun'25"
+  }
 ]

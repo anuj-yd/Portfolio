@@ -36,7 +36,7 @@ const Certifications = () => {
                             <div className="cert-flip-card">
                                 {/* Front */}
                                 <div
-                                    className="cert-face bg-white rounded-[2rem] p-8 border-[3px] border-[#1A1A1A] relative"
+                                    className="cert-face bg-white rounded-[2rem] p-8 border-[3px] border-[#1A1A1A] relative flex flex-col"
                                     style={{ boxShadow: `8px 8px 0px ${cert.color}` }}
                                 >
                                     <div className="flex justify-between items-start mb-6">
@@ -70,6 +70,7 @@ const Certifications = () => {
                                         className="absolute bottom-4 right-4 w-12 h-12 rounded-full opacity-[0.03] transition-opacity"
                                         style={{ background: cert.color }}
                                     />
+
                                 </div>
 
                                 {/* Back */}

@@ -15,6 +15,8 @@ const CertificateModal = ({ isOpen, onClose, certUrl, certTitle }) => {
         };
     }, [isOpen]);
 
+    const isPdf = certUrl?.toLowerCase().includes('.pdf');
+
     return (
         <AnimatePresence>
             {isOpen && (
@@ -49,16 +51,20 @@ const CertificateModal = ({ isOpen, onClose, certUrl, certTitle }) => {
                         </div>
 
                         {/* Viewer */}
-                        <div className="flex-1 bg-gray-200 overflow-auto p-4 md:p-8 flex justify-center items-start">
-                            <iframe
-                                src={`${certUrl}#view=FitV&navpanes=0&toolbar=0&scrollbar=0`}
-                                title={certTitle}
-                                className="w-full h-full rounded-sm border-2 border-black/10 bg-white shadow-2xl"
-                                style={{
-                                    maxWidth: '100%',
-                                    aspectRatio: '1.414/1', // A4 Landscape ratio
-                                }}
-                            />
+                        <div className="flex-1 bg-gray-200 overflow-hidden p-4 md:p-8 flex justify-center items-center">
+                            {isPdf ? (
+                                <iframe
+                                    src={`${certUrl}#view=Fit&navpanes=0&toolbar=0&scrollbar=0`}
+                                    title={certTitle}
+                                    className="w-full h-full rounded-sm border-2 border-black/10 bg-white shadow-2xl"
+                                />
+                            ) : (
+                                <img
+                                    src={certUrl}
+                                    alt={`${certTitle} certificate`}
+                                    className="max-w-full max-h-full object-contain rounded-sm border-2 border-black/10 bg-white shadow-2xl"
+                                />
+                            )}
                         </div>
 
                         {/* Footer / Caption */}

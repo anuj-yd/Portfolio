@@ -14,7 +14,6 @@ export const profile = {
   social: {
     github: 'https://github.com/anuj-yd',
     linkedin: 'https://linkedin.com/in/anuj-yd',
-    instagram: 'https://instagram.com/ig_anuj_18',
   },
   contact: {
     phone: '+91 9936992241',
@@ -54,32 +53,39 @@ export const profile = {
   achievements,
   certifications: [
     {
-      title: 'JavaScript Intermediate',
-      issuer: 'HackerRank',
-      date: '2024',
-      url: '/certificates/javascript_intermediate certificate.pdf',
+      title: 'Graph Theory Programming Camp',
+      issuer: 'Algo University',
+      date: "Mar'26",
+      url: 'https://d3uam8jk4sa4y4.cloudfront.net/static/certificates/graph_camp/anuj-yadav.png',
       color: '#F4C430',
     },
     {
       title: 'Problem Solving Intermediate',
       issuer: 'HackerRank',
-      date: '2024',
+      date: '2025',
       url: '/certificates/problem_solving_intermediate certificate.pdf',
       color: '#1A535C',
     },
     {
       title: 'OCI Foundations',
       issuer: 'Oracle',
-      date: '2023',
+      date: '2025',
       url: '/certificates/eCertificate Oracle.pdf',
       color: '#E85D4A',
     },
     {
       title: 'Cloud Computing',
       issuer: 'NPTEL',
-      date: '2023',
+      date: "Oct'25",
       url: '/certificates/Cloud Computing.pdf',
       color: '#F4833D',
+    },
+    {
+      title: 'DSA Self Paced',
+      issuer: 'Neo Colab',
+      date: '2024',
+      url: '/certificates/dsa cert.pdf',
+      color: '#1A535C',
     },
     {
       title: 'Responsive Web Design',
@@ -87,13 +93,6 @@ export const profile = {
       date: '2023',
       url: '/certificates/freecodecamp.pdf',
       color: '#E8699A',
-    },
-    {
-      title: 'DSA Self Paced',
-      issuer: 'GeeksforGeeks',
-      date: '2023',
-      url: '/certificates/dsa cert.pdf',
-      color: '#1A535C',
     },
   ],
   dsaStats,

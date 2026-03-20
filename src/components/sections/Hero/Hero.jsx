@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { motion } from 'framer-motion';
-import { SiLinkedin, SiInstagram, SiGithub } from 'react-icons/si';
+import { SiLinkedin, SiGithub, SiWhatsapp } from 'react-icons/si';
 import FixedMarquee from '../../ui/FixedMarquee';
 import BouncyText from '../../ui/BouncyText';
 
@@ -95,8 +95,8 @@ const Hero = () => {
                         <div className="flex gap-4 mb-6">
                             {[
                                 { Icon: SiLinkedin, href: "https://linkedin.com/in/anuj-yadav-158a47298" },
-                                { Icon: SiInstagram, href: "https://instagram.com/ig_anuj_18" },
                                 { Icon: SiGithub, href: "https://github.com/anuj-yd" },
+                                { Icon: SiWhatsapp, href: "https://wa.me/919936992241" },
                             ].map(({ Icon, href }, i) => (
                                 <motion.a
                                     key={i}

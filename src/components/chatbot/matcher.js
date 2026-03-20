@@ -121,8 +121,8 @@ export const findAnswer = (question, profile) => {
   }
 
   // Contact / social
-  if (normalized.includes('contact') || normalized.includes('email') || normalized.includes('reach') || normalized.includes('hire') || normalized.includes('connect') || normalized.includes('linkedin') || normalized.includes('github') || normalized.includes('social') || normalized.includes('phone') || normalized.includes('whatsapp') || normalized.includes('instagram')) {
-    return `📬 You can reach Anuj here:\n\n📧 **Email**: ${profile.basics.email}\n📱 **Phone**: ${profile.contact?.phone || 'N/A'}\n💬 **WhatsApp**: ${profile.contact?.whatsapp || 'N/A'}\n💼 **LinkedIn**: ${profile.social.linkedin}\n📸 **Instagram**: ${profile.social.instagram || 'N/A'}\n🐙 **GitHub**: ${profile.social.github}`;
+  if (normalized.includes('contact') || normalized.includes('email') || normalized.includes('reach') || normalized.includes('hire') || normalized.includes('connect') || normalized.includes('linkedin') || normalized.includes('github') || normalized.includes('social') || normalized.includes('phone') || normalized.includes('whatsapp')) {
+    return `📬 You can reach Anuj here:\n\n📧 **Email**: ${profile.basics.email}\n📱 **Phone**: ${profile.contact?.phone || 'N/A'}\n💬 **WhatsApp**: ${profile.contact?.whatsapp || 'N/A'}\n💼 **LinkedIn**: ${profile.social.linkedin}\n🐙 **GitHub**: ${profile.social.github}`;
   }
 
   // Experience / work
