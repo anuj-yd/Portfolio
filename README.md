@@ -1,109 +1,120 @@
 # Interactive Developer Portfolio
 
-A dynamic, fully responsive, and highly animated personal portfolio website built to showcase projects, skills, and coding achievements.
+A dynamic, fully responsive, and highly animated personal portfolio website to showcase projects, skills, certifications, and coding achievements.
 
-![Portfolio Preview](/public/vite.svg) (*Add an actual screenshot to your public directory and link it here*)
+> Tip: Replace the preview image with a real screenshot.
 
-## 🌟 Key Features
+![Portfolio Preview](/public/vite.svg)
 
-- **Modern Tech Stack**: Built with React 19, Vite, and Tailwind CSS v4 for blazing fast performance and styling.
-- **Rich Animations**: Utilizes Framer Motion, GSAP, and Anime.js to create a premium, interactive user experience.
-- **Custom UI Elements**: Custom "bouncing" blue arrow cursor, smooth scrolling, and dynamic page transitions.
-- **Dedicated Sections**:
-  - **About & Hero**: Introduction with animated text and Lottie animations.
-  - **Skills**: Categorized technical skills (Frontend, Backend, Languages, Tools) with proficiency indicators dynamically loaded from JSON.
-  - **Projects**: Showcase of personal projects (e.g., Nivana, Volunteer Management System) with links to live demos and GitHub repositories.
-  - **DSA Profile**: Live integration-like display of competitive programming stats (LeetCode, CodeChef, HackerRank, GeeksForGeeks).
-  - **Certifications**: Gallery of earned certificates.
-  - **Contact**: Integrated contact form powered by EmailJS.
-- **Interactive ChatBot**: A floating "CV Chatbot" available on all pages to interactively answer questions about the portfolio.
+## Highlights
 
-## 🛠️ Technology Stack
+- Modern stack: React 19, Vite, Tailwind CSS v4
+- Rich motion: Framer Motion, GSAP, Anime.js
+- Custom UI: animated cursor, smooth scrolling, page transitions
+- Sections: Hero, About, Skills, Projects, DSA, Certifications, Contact
+- Chatbot: floating CV assistant that answers portfolio questions
+- Contact form: EmailJS integration
 
-**Frontend Context:**
-- **Framework**: React 19
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS (v4) & Styled Components
-- **Animations**: Framer Motion, GSAP, Anime.js, Lottie-React
-- **Icons**: Lucide React, React Icons
-- **Data Visualization**: Recharts
+## Tech Stack
 
-**Utilities & Integrations:**
-- **Email Handling**: EmailJS (@emailjs/browser)
-- **Routing/Scrolling**: react-scroll
-- **Code Linting**: ESLint
+- Framework: React
+- Build tool: Vite
+- Styling: Tailwind CSS, Styled Components
+- Animations: Framer Motion, GSAP, Anime.js, Lottie
+- Icons: React Icons, Lucide
+- Charts: Recharts
+- Utilities: react-scroll, clsx
+- Email: @emailjs/browser
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 src/
-├── animations/        # Reusable animation variants (Framer Motion, GSAP)
-├── assets/            # Static files, images, icons
-├── components/        # React components
-│   ├── chatbot/       # Floating CV ChatBot components
-│   ├── layout/        # Navbar, PageTransition, etc.
-│   ├── sections/      # Hero, About, Skills, Projects, DSA Profile, Contact
-│   └── ui/            # Reusable UI elements
-├── data/              # JSON files for dynamic content (projects, skills, achievements, DSA stats)
-├── hooks/             # Custom React hooks
-├── styles/            # Global stylesheets
-├── utils/             # Helper functions
-├── App.jsx            # Main application component routing internal sections
-└── main.jsx           # Entry point
++-- animations/        # Reusable animation variants
++-- assets/            # Static files, images, icons
++-- components/        # React components
+�   +-- chatbot/       # Floating CV chatbot
+�   +-- layout/        # Navbar, transitions
+�   +-- sections/      # Hero, About, Skills, Projects, DSA, Contact
+�   +-- ui/            # Reusable UI elements
++-- data/              # JSON content (projects, skills, achievements, DSA stats)
++-- hooks/             # Custom hooks
++-- styles/            # Global stylesheets
++-- utils/             # Helpers
++-- App.jsx            # Main app
++-- main.jsx           # Entry point
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+- Node.js (LTS recommended)
+- npm (ships with Node.js)
 
 ### Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/anuj-yd/portfolio.git
-   cd portfolio
-   ```
+```bash
+git clone https://github.com/anuj-yd/portfolio.git
+cd portfolio
+npm install
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### Environment Variables
 
-3. **Set up Environment Variables:**
-   Create a `.env` file in the root directory and add your EmailJS configuration:
-   ```env
-   VITE_EMAILJS_SERVICE_ID=your_service_id
-   VITE_EMAILJS_TEMPLATE_ID=your_template_id
-   VITE_EMAILJS_PUBLIC_KEY=your_public_key
-   ```
-   *(Ensure to replace the values with your actual EmailJS credentials for the contact form to work)*
+Create a `.env` file in the project root:
 
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-5. **Build for production:**
-   ```bash
-   npm run build
-   ```
+### Run Locally
 
-## 📝 Customization
+```bash
+npm run dev
+```
 
-You can easily update the content using the JSON files located in `src/data/`:
-- `projects.json`: Add/remove projects.
-- `skills.json`: Update your technical skills and proficiency.
-- `dsa-stats.json`: Update your competitive programming profiles.
-- `achievements.json`: Manage your featured milestones.
+### Build for Production
 
-## 👤 Author
+```bash
+npm run build
+```
 
-**Anuj Yadav**
-- [GitHub](https://github.com/anuj-yd)
-- Email/Contact via the portfolio form.
+### Preview Production Build
 
-## 📄 License
+```bash
+npm run preview
+```
 
-This project is licensed under the MIT License - feel free to build upon it for your own portfolio!
+## NPM Commands
+
+These are the scripts used in this project (from `package.json`):
+
+```bash
+npm run dev       # Start dev server
+npm run build     # Production build
+npm run preview   # Preview production build
+npm run lint      # Lint the codebase
+```
+
+## Customization
+
+Update content in `src/data/`:
+
+- `projects.json` for projects
+- `skills.json` for skills
+- `dsa-stats.json` for competitive programming stats
+- `achievements.json` for milestones
+- `profile.js` for personal details and certifications
+
+## Author
+
+Anuj Yadav
+- GitHub: https://github.com/anuj-yd
+- Contact: via the portfolio form
+
+## License
+
+MIT License
