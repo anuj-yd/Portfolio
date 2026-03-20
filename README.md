@@ -11,7 +11,7 @@ A modern, animated, and responsive developer portfolio built with React + Vite. 
 
 ## Live Demo
 
-Deployed URL: `https://your-portfolio.vercel.app`
+Deployed URL: `https://anuj-yd.vercel.app`
 
 ## Screenshots
 
