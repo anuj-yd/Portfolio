@@ -36,35 +36,40 @@ const Certifications = () => {
                             <div className="cert-flip-card">
                                 {/* Front */}
                                 <div
-                                    className="cert-face bg-white rounded-[2rem] p-8 border-[3px] border-[#1A1A1A] relative flex flex-col"
+                                    className="cert-face bg-white rounded-[2rem] p-0 border-[3px] border-[#1A1A1A] relative flex flex-col overflow-hidden"
                                     style={{ boxShadow: `8px 8px 0px ${cert.color}` }}
                                 >
-                                    <div className="flex justify-between items-start mb-6">
-                                        <div
-                                            className="w-12 h-12 rounded-2xl flex items-center justify-center text-white border-2 border-black shadow-[3px 3px 0px #1A1A1A]"
-                                            style={{ background: cert.color }}
-                                        >
-                                            <HiOutlineAcademicCap size={24} />
+                                    {cert.thumbnail && (
+                                        <div className="h-1/2 bg-white">
+                                            <img
+                                                src={cert.thumbnail}
+                                                alt={`${cert.title} thumbnail`}
+                                                className="w-full h-full object-cover"
+                                                loading="lazy"
+                                            />
                                         </div>
-                                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-text-secondary opacity-50">
-                                            {cert.date}
-                                        </span>
+                                    )}
+
+                                    <div className="p-6 flex flex-col flex-1">
+                                        <div className="flex justify-between items-start mb-4">
+                                            <div
+                                                className="w-11 h-11 rounded-2xl flex items-center justify-center text-white border-2 border-black shadow-[3px 3px 0px #1A1A1A]"
+                                                style={{ background: cert.color }}
+                                            >
+                                                <HiOutlineAcademicCap size={22} />
+                                            </div>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-text-secondary opacity-50">
+                                                {cert.date}
+                                            </span>
+                                        </div>
+
+                                        <h3 className="text-lg font-black text-text-primary mb-2 uppercase tracking-tight leading-tight">
+                                            {cert.title}
+                                        </h3>
+                                        <p className="text-xs font-bold text-text-secondary uppercase tracking-widest opacity-70">
+                                            {cert.issuer}
+                                        </p>
                                     </div>
-
-                                    <h3 className="text-xl font-black text-text-primary mb-2 uppercase tracking-tight leading-tight">
-                                        {cert.title}
-                                    </h3>
-                                    <p className="text-sm font-bold text-text-secondary uppercase tracking-widest mb-8 opacity-70">
-                                        {cert.issuer}
-                                    </p>
-
-                                    <button
-                                        onClick={() => setSelectedCert(cert)}
-                                        className="inline-flex items-center gap-2 font-black text-xs uppercase tracking-widest px-5 py-2.5 bg-white border-2 border-black rounded-xl transition-all hover:bg-black hover:text-white shadow-[4px 4px 0px #1A1A1A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-                                    >
-                                        <HiOutlineEye size={16} />
-                                        View Certificate
-                                    </button>
 
                                     <div
                                         className="absolute bottom-4 right-4 w-12 h-12 rounded-full opacity-[0.03] transition-opacity"

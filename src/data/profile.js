@@ -57,6 +57,7 @@ export const profile = {
       issuer: 'Algo University',
       date: "Mar'26",
       url: 'https://d3uam8jk4sa4y4.cloudfront.net/static/certificates/graph_camp/anuj-yadav.png',
+      thumbnail: '/assets/graphcamp.png',
       color: '#F4C430',
     },
     {
@@ -64,6 +65,7 @@ export const profile = {
       issuer: 'HackerRank',
       date: '2025',
       url: '/certificates/problem_solving_intermediate certificate.pdf',
+      thumbnail: '/assets/problemsolving.png',
       color: '#1A535C',
     },
     {
@@ -71,6 +73,7 @@ export const profile = {
       issuer: 'Oracle',
       date: '2025',
       url: '/certificates/eCertificate Oracle.pdf',
+      thumbnail: '/assets/oracle.png',
       color: '#E85D4A',
     },
     {
@@ -78,6 +81,7 @@ export const profile = {
       issuer: 'NPTEL',
       date: "Oct'25",
       url: '/certificates/Cloud Computing.pdf',
+      thumbnail: '/assets/nptel.png',
       color: '#F4833D',
     },
     {
@@ -85,6 +89,7 @@ export const profile = {
       issuer: 'Neo Colab',
       date: '2024',
       url: '/certificates/dsa cert.pdf',
+      thumbnail: '/assets/neocolab.png',
       color: '#1A535C',
     },
     {
@@ -92,6 +97,7 @@ export const profile = {
       issuer: 'freeCodeCamp',
       date: '2023',
       url: '/certificates/freecodecamp.pdf',
+      thumbnail: '/assets/ffc.png',
       color: '#E8699A',
     },
   ],
