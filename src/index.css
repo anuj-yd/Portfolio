@@ -55,6 +55,24 @@
   * {
     box-sizing: border-box;
   }
+
+  /* Global press feedback for clickable elements */
+  button,
+  [role="button"],
+  a.btn-primary,
+  a.btn-secondary,
+  a.btn-coral {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  button:active,
+  [role="button"]:active,
+  a.btn-primary:active,
+  a.btn-secondary:active,
+  a.btn-coral:active {
+    transform: translate(1px, 1px) scale(0.98);
+    box-shadow: 1px 1px 0px rgba(26, 26, 26, 0.9);
+  }
 }
 
 @layer components {
