@@ -71,6 +71,30 @@ VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
+### EmailJS Template Variables (Rating)
+
+The contact form sends these parameters to EmailJS. Add them in your EmailJS template:
+
+```text
+from_name
+from_email
+message
+rating
+```
+
+Example template content:
+
+```text
+New Contact Form Message
+
+Name: {{from_name}}
+Email: {{from_email}}
+Rating: {{rating}}
+
+Message:
+{{message}}
+```
+
 ### Run Locally
 
 ```bash
