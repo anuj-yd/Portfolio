@@ -1,4 +1,4 @@
-# Interactive Developer Portfolio
+ï»¿# Interactive Developer Portfolio
 
 A dynamic, fully responsive, and highly animated personal portfolio website to showcase projects, skills, certifications, and coding achievements.
 
@@ -14,6 +14,7 @@ A dynamic, fully responsive, and highly animated personal portfolio website to s
 - Sections: Hero, About, Skills, Projects, DSA, Certifications, Contact
 - Chatbot: floating CV assistant that answers portfolio questions
 - Contact form: EmailJS integration
+- Back-to-top button: quick jump to the Home section
 
 ## Tech Stack
 
@@ -33,10 +34,10 @@ src/
 +-- animations/        # Reusable animation variants
 +-- assets/            # Static files, images, icons
 +-- components/        # React components
-¦   +-- chatbot/       # Floating CV chatbot
-¦   +-- layout/        # Navbar, transitions
-¦   +-- sections/      # Hero, About, Skills, Projects, DSA, Contact
-¦   +-- ui/            # Reusable UI elements
+Â¦   +-- chatbot/       # Floating CV chatbot
+Â¦   +-- layout/        # Navbar, transitions
+Â¦   +-- sections/      # Hero, About, Skills, Projects, DSA, Contact
+Â¦   +-- ui/            # Reusable UI elements
 +-- data/              # JSON content (projects, skills, achievements, DSA stats)
 +-- hooks/             # Custom hooks
 +-- styles/            # Global stylesheets
@@ -118,3 +119,4 @@ Anuj Yadav
 ## License
 
 MIT License
+
