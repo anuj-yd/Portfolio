@@ -1,79 +1,59 @@
-﻿# Interactive Developer Portfolio
+﻿# Anuj Yadav • Portfolio
 
-A dynamic, fully responsive, and highly animated personal portfolio website to showcase projects, skills, certifications, and coding achievements.
+A modern, animated, and responsive developer portfolio built with React + Vite. It showcases projects, skills, certifications, DSA stats, and a Gemini-powered chatbot that answers based on portfolio data.
 
-> Tip: Replace the preview image with a real screenshot.
+## What’s Inside
 
-![Portfolio Preview](/public/vite.svg)
-
-## Highlights
-
-- Modern stack: React 19, Vite, Tailwind CSS v4
-- Rich motion: Framer Motion, GSAP, Anime.js
-- Custom UI: smooth scrolling, page transitions
-- Sections: Hero, About, Skills, Projects, DSA, Certifications, Contact
-- Chatbot: floating CV assistant that answers portfolio questions
-- Contact form: EmailJS integration + star rating
-- Back-to-top button: quick jump to the Home section
+- Hero, About, Skills, Projects, DSA, Achievements, Certifications, Resume, Contact
+- Floating chatbot with Gemini API (serverless)
+- Theme toggle (light/dark)
+- Rich motion and interactive UI
 
 ## Tech Stack
 
-- Framework: React
-- Build tool: Vite
-- Styling: Tailwind CSS, Styled Components
-- Animations: Framer Motion, GSAP, Anime.js, Lottie
-- Icons: React Icons, Lucide
-- Charts: Recharts
-- Utilities: react-scroll, clsx
-- Email: @emailjs/browser
+- React 19, Vite
+- Tailwind CSS v4, Styled Components
+- Framer Motion, GSAP, Anime.js, Lottie
+- Recharts, react-scroll, react-icons
+- EmailJS for contact form
 
-## Project Structure
-
-```text
-src/
-+-- animations/        # Reusable animation variants
-+-- assets/            # Static files, images, icons
-+-- components/        # React components
-¦   +-- chatbot/       # Floating CV chatbot
-¦   +-- layout/        # Navbar, transitions
-¦   +-- sections/      # Hero, About, Skills, Projects, DSA, Contact
-¦   +-- ui/            # Reusable UI elements
-+-- data/              # JSON content (projects, skills, achievements, DSA stats)
-+-- hooks/             # Custom hooks
-+-- styles/            # Global stylesheets
-+-- utils/             # Helpers
-+-- App.jsx            # Main app
-+-- main.jsx           # Entry point
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (LTS recommended)
-- npm (ships with Node.js)
-
-### Installation
+## Quick Start
 
 ```bash
 git clone https://github.com/anuj-yd/portfolio.git
 cd portfolio
 npm install
+npm run dev
 ```
 
-### Environment Variables
+## Environment Variables
 
 Create a `.env` file in the project root:
 
 ```env
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
+# EmailJS
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+
+# Gemini (serverless)
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-1.5-flash
 ```
 
-### EmailJS Template Variables (Rating)
+## Gemini Chatbot (Vercel Serverless)
 
-The contact form sends these parameters to EmailJS. Add them in your EmailJS template:
+This project uses a Vercel serverless function for Gemini:
+
+- `api/chat.js` handles the request
+- Portfolio data is injected server-side
+- Frontend calls `/api/chat`
+
+When deploying on Vercel, add `GEMINI_API_KEY` in Project Settings → Environment Variables and redeploy.
+
+## EmailJS Template Variables
+
+The contact form sends these fields:
 
 ```text
 from_name
@@ -82,66 +62,49 @@ message
 rating
 ```
 
-Example template content:
+## Project Structure
 
 ```text
-New Contact Form Message
-
-Name: {{from_name}}
-Email: {{from_email}}
-Rating: {{rating}}
-
-Message:
-{{message}}
-```
-
-### Run Locally
-
-```bash
-npm run dev
-```
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-## NPM Commands
-
-These are the scripts used in this project (from `package.json`):
-
-```bash
-npm run dev       # Start dev server
-npm run build     # Production build
-npm run preview   # Preview production build
-npm run lint      # Lint the codebase
+src/
++-- components/
+¦   +-- chatbot/
+¦   +-- layout/
+¦   +-- sections/
+¦   +-- ui/
++-- data/
++-- hooks/
++-- App.jsx
++-- main.jsx
+api/
++-- chat.js
+public/
 ```
 
 ## Customization
 
-Update content in `src/data/`:
+Update content in:
 
-- `projects.json` for projects
-- `skills.json` for skills
-- `dsa-stats.json` for competitive programming stats
-- `achievements.json` for milestones
-- `profile.js` for personal details and certifications
+- `src/data/profile.js`
+- `src/data/projects.json`
+- `src/data/skills.json`
+- `src/data/achievements.json`
+- `src/data/dsa-stats.json`
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
 
 ## Author
 
 Anuj Yadav
 - GitHub: https://github.com/anuj-yd
-- Contact: via the portfolio form
+- LinkedIn: https://linkedin.com/in/anuj-yd
 
 ## License
 
-MIT License
-
-
+MIT
