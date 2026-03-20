@@ -49,7 +49,7 @@ const Projects = () => {
                             boxShadow: "3px 3px 0px #1A535C"
                         }}
                     >
-                        See more on GitHub â†’
+                        See more on GitHub →
                     </a>
                 </motion.div>
             </div>
