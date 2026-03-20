@@ -9,6 +9,14 @@ A modern, animated, and responsive developer portfolio built with React + Vite. 
 - Theme toggle (light/dark)
 - Rich motion and interactive UI
 
+## Screenshots
+
+### Home
+
+![Home](/public/home.png)
+
+The hero section introduces the portfolio with a bold headline, animated accents, and quick visual context about the developer. It’s designed to feel energetic and immediately communicate the tech-forward style of the site.
+
 ## Tech Stack
 
 - React 19, Vite
