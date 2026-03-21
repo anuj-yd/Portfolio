@@ -117,7 +117,7 @@ const Skills = () => {
                                         key={`rowA-${skill.name}-${i}`}
                                         variants={itemVariants}
                                         whileHover={{ y: -8, rotate: 0.5 }}
-                                        className="bg-white rounded-3xl p-6 sm:p-8 relative overflow-hidden group border-[3px] border-[#1A1A1A] min-w-[260px] sm:min-w-[320px]"
+                                        className="bg-white rounded-3xl p-6 sm:p-8 relative overflow-hidden group border-[3px] border-[#1A1A1A] min-w-[260px] sm:min-w-[320px] scroll-fade-card"
                                         style={{ boxShadow: `8px 8px 0px ${skillColor}` }}
                                     >
                                         <div

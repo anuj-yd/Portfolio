@@ -70,7 +70,7 @@ const Resume = () => {
               {profile.education.map((edu, idx) => (
                 <div
                   key={`${edu.school}-${idx}`}
-                  className="bg-white rounded-3xl p-7 border-[3px] border-[#1A1A1A]"
+                  className="bg-white rounded-3xl p-7 border-[3px] border-[#1A1A1A] scroll-fade-card"
                   style={{ boxShadow: '8px 8px 0px #1A535C' }}
                 >
                   <div className="flex items-start justify-between gap-4 flex-wrap">
@@ -100,7 +100,7 @@ const Resume = () => {
               {profile.skills.map((group) => (
                 <div
                   key={group.label}
-                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A]"
+                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A] scroll-fade-card"
                   style={{ boxShadow: '8px 8px 0px #E8699A' }}
                 >
                   <h3 className="text-base font-black uppercase tracking-widest text-text-primary mb-4">
@@ -132,7 +132,7 @@ const Resume = () => {
               {profile.projects.map((proj) => (
                 <div
                   key={proj.title}
-                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A]"
+                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A] scroll-fade-card"
                   style={{ boxShadow: '8px 8px 0px #F4C430' }}
                 >
                   <h3 className="text-lg font-black text-text-primary mb-1">{proj.title}</h3>
@@ -156,7 +156,7 @@ const Resume = () => {
               {profile.achievements.map((achievement) => (
                 <div
                   key={achievement.title}
-                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A] flex items-center gap-3"
+                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A] flex items-center gap-3 scroll-fade-card"
                   style={{ boxShadow: '8px 8px 0px #E85D4A' }}
                 >
                   <span className="w-3 h-3 rounded-full bg-accent-coral border-2 border-black" />
@@ -177,7 +177,7 @@ const Resume = () => {
               {profile.certifications.map((cert) => (
                 <div
                   key={cert.title}
-                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A] flex items-center gap-3"
+                  className="bg-white rounded-3xl p-6 border-[3px] border-[#1A1A1A] flex items-center gap-3 scroll-fade-card"
                   style={{ boxShadow: '8px 8px 0px #1A535C' }}
                 >
                   <span className="w-3 h-3 rounded-full bg-accent-teal border-2 border-black" />

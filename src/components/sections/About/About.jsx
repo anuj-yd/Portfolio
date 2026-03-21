@@ -56,7 +56,7 @@ const About = () => {
                                 <motion.div
                                     key={i}
                                     whileHover={{ y: -6, scale: 1.02 }}
-                                    className="bg-white rounded-full p-4 relative overflow-hidden group border-2 border-black aspect-square flex items-center justify-center w-40 h-40 md:w-44 md:h-44"
+                                    className="bg-white rounded-full p-4 relative overflow-hidden group border-2 border-black aspect-square flex items-center justify-center w-40 h-40 md:w-44 md:h-44 scroll-fade-card"
                                     style={{
                                         boxShadow: `8px 8px 0px ${['#F4833D', '#F4C430', '#1A535C', '#E8699A'][i % 4]}`,
                                     }}

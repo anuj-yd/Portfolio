@@ -58,6 +58,25 @@ const PageTransition = ({ children }) => {
             });
         });
 
+        // Card fade animation: re-trigger on scroll up/down
+        const fadeCards = document.querySelectorAll('.scroll-fade-card');
+        fadeCards.forEach((el) => {
+            const playFade = () => {
+                el.classList.remove('fade-in-top');
+                void el.offsetWidth;
+                el.classList.add('fade-in-top');
+            };
+
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 92%',
+                onEnter: playFade,
+                onEnterBack: playFade,
+                onLeave: () => el.classList.remove('fade-in-top'),
+                onLeaveBack: () => el.classList.remove('fade-in-top'),
+            });
+        });
+
         // Ensure all triggers are calculated correctly after elements are rendered
         setTimeout(() => {
             ScrollTrigger.refresh();

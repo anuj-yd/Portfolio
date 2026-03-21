@@ -39,7 +39,7 @@ const Achievements = () => {
                                 return (
                                     <div
                                         key={`${item.title}-${offset}`}
-                                        className="ach-slide card-retro !p-0 overflow-hidden"
+                                        className="ach-slide card-retro scroll-fade-card !p-0 overflow-hidden"
                                         style={{
                                             zIndex: 3 - offset,
                                             transform: `translateY(${offset * 12}px) scale(${1 - offset * 0.04})`,
@@ -70,7 +70,7 @@ const Achievements = () => {
                                 return (
                                     <div
                                         key={`${item.title}-${activeIndex}`}
-                                        className="ach-slide card-retro !p-0 overflow-hidden fade-in-tr"
+                                        className="ach-slide card-retro scroll-fade-card !p-0 overflow-hidden fade-in-tr"
                                         style={{ zIndex: 3 }}
                                     >
                                         <div className="p-8 md:p-10">

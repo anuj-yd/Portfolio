@@ -18,7 +18,7 @@ const ProjectCard = ({ project, onCaseStudy }) => {
         <motion.div
             whileHover={{ y: -8, rotate: -0.5 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="card-retro !p-0 overflow-hidden group relative flex flex-col h-full"
+            className="card-retro scroll-fade-card !p-0 overflow-hidden group relative flex flex-col h-full"
         >
             {/* Frame corners */}
             <FrameCorner className="top-2.5 left-2.5" />

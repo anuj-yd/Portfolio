@@ -130,7 +130,7 @@ const Contact = () => {
                         initial={false}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="card-premium border-black/5"
+                        className="card-premium border-black/5 scroll-fade-card"
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>

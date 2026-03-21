@@ -38,7 +38,7 @@ const DSAProfile = () => {
                             <motion.div
                                 key={stat.platform}
                                 whileHover={{ y: -10, rotate: i % 2 === 0 ? 0.6 : -0.6 }}
-                                className="bg-white rounded-[1.75rem] p-5 relative overflow-hidden group border-[3px] border-[#1A1A1A] flex flex-col items-center text-center w-full max-w-[240px] mx-auto"
+                                className="bg-white rounded-[1.75rem] p-5 relative overflow-hidden group border-[3px] border-[#1A1A1A] flex flex-col items-center text-center w-full max-w-[240px] mx-auto scroll-fade-card"
                                 style={{
                                     boxShadow: `8px 8px 0px ${stat.color}`,
                                 }}
@@ -95,7 +95,7 @@ const DSAProfile = () => {
                     </motion.div>
 
                     {/* Chart Area */}
-                    <div className="relative p-6 sm:p-8 bg-white rounded-[2.5rem] border-[3px] border-[#1A1A1A] shadow-[10px 10px 0px #1A535C] overflow-hidden group">
+                    <div className="relative p-6 sm:p-8 bg-white rounded-[2.5rem] border-[3px] border-[#1A1A1A] shadow-[10px 10px 0px #1A535C] overflow-hidden group scroll-fade-card">
                         {/* Decorative Chart Background */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-accent-teal/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-gold/10 rounded-full blur-2xl" />

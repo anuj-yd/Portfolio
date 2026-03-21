@@ -28,7 +28,7 @@ const Certifications = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="relative h-[420px] sm:h-[470px] group [perspective:1200px]"
+                            className="relative h-[420px] sm:h-[470px] group [perspective:1200px] scroll-fade-card"
                         >
                             <div className="cert-flip-card">
                                 {/* Front */}
