@@ -68,11 +68,24 @@ When deploying on Vercel, add `GEMINI_API_KEY` in Project Settings → Environme
 The contact form sends these fields:
 
 ```text
+to_email
 from_name
 from_email
 message
+reply_to
 rating
 ```
+
+## EmailJS Production Setup
+
+To ensure the contact form works in production:
+
+1. Add your domain to EmailJS → Service → `Allowed Domains`
+2. Set the following env vars in your hosting provider and redeploy:
+   - `VITE_EMAILJS_SERVICE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID`
+   - `VITE_EMAILJS_PUBLIC_KEY`
+3. Keep the EmailJS template variables exactly as listed above
 
 ## Project Structure
 
