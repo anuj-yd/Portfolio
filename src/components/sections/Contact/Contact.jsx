@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { HiOutlineMail, HiOutlineLocationMarker } from 'react-icons/hi';
 import { SiLinkedin, SiWhatsapp, SiGithub } from 'react-icons/si';
@@ -16,10 +16,22 @@ const Contact = () => {
         e.preventDefault();
         const result = await sendEmail(formData);
         if (result.success) {
-            setStatus('Message sent successfully! 🚀');
+            setStatus({
+                type: 'success',
+                message: 'Message sent successfully!',
+            });
             setFormData({ name: '', email: '', message: '', rating: '' });
         } else {
-            setStatus('Something went wrong. Please try again.');
+            const errorText =
+                result?.error?.text ||
+                result?.error?.message ||
+                result?.error?.statusText ||
+                'Unknown error';
+            const details = import.meta.env.DEV ? ` (${errorText})` : '';
+            setStatus({
+                type: 'error',
+                message: `Something went wrong. Please try again.${details}`,
+            });
         }
         setTimeout(() => setStatus(null), 5000);
     };
@@ -231,9 +243,9 @@ const Contact = () => {
                                 <motion.p
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    className={`text-center font-medium ${status.includes('successfully') ? 'text-green-400' : 'text-red-400'}`}
+                                    className={`text-center font-medium ${status.type === 'success' ? 'text-green-400' : 'text-red-400'}`}
                                 >
-                                    {status}
+                                    {status.message}
                                 </motion.p>
                             )}
                         </form>
