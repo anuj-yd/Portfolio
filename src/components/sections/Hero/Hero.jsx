@@ -64,7 +64,7 @@ const Hero = () => {
                             ref={greetRef}
                             style={{
                                 fontFamily: "'Caveat', cursive",
-                                fontSize: "2rem",
+                                fontSize: "clamp(1.5rem, 4vw, 2rem)",
                                 color: "#4A4A4A",
                                 display: "block",
                                 marginBottom: "4px"
@@ -141,7 +141,7 @@ const Hero = () => {
 
                         {/* Exp row */}
                         <div ref={statsRef} className="flex items-baseline gap-3 mb-6" style={{ opacity: 0 }}>
-                            <span className="text-5xl font-display font-black text-text-primary">01+</span>
+                            <span className="text-4xl sm:text-5xl font-display font-black text-text-primary">01+</span>
                             <div className="text-xs uppercase tracking-widest font-black text-text-secondary leading-tight">YEARS<br />EXPERIENCE</div>
                         </div>
 
@@ -157,7 +157,7 @@ const Hero = () => {
                     </div>
 
                     {/* ───── RIGHT: Real Photo ───── */}
-                    <div className="order-1 lg:order-2 flex justify-end pr-4 mt-12 lg:mt-12">
+                    <div className="order-1 lg:order-2 flex justify-end pr-0 sm:pr-4 mt-8 sm:mt-12 lg:mt-12">
                         <div ref={imgRef} className="relative">
                             {/* Spinning dashed ring */}
                             <div className="absolute -inset-8 border-4 border-dashed border-accent-gold rounded-full animate-spin-slow opacity-70 pointer-events-none" />
@@ -178,8 +178,8 @@ const Hero = () => {
                             <div
                                 className="relative overflow-hidden bg-white"
                                 style={{
-                                    width: "500px",
-                                    height: "500px",
+                                    width: "clamp(260px, 70vw, 500px)",
+                                    height: "clamp(260px, 70vw, 500px)",
                                     borderRadius: "50%",
                                     border: "5px solid #1A1A1A",
                                 }}
@@ -207,7 +207,7 @@ const Hero = () => {
 
                             {/* Floating badges */}
                             <motion.div
-                                className="absolute -top-6 -right-6 w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center text-3xl"
+                                className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-12 h-12 sm:w-16 sm:h-16 bg-accent-gold rounded-full flex items-center justify-center text-2xl sm:text-3xl"
                                 style={{ border: "3px solid #1A1A1A", boxShadow: "3px 3px 0 #1A1A1A" }}
                                 animate={{ rotate: [0, 12, -12, 0] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -241,8 +241,8 @@ const Hero = () => {
                     </div>
 
                     {/* ───── RIGHT: Statement + Stats ───── */}
-                    <div className="lg:col-span-4 order-3 text-right" data-reveal="right">
-                        <p className="text-xl md:text-2xl text-text-secondary max-w-xs ml-auto mb-4 leading-relaxed">
+                    <div className="lg:col-span-4 order-3 text-left lg:text-right" data-reveal="right">
+                        <p className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-none lg:max-w-xs ml-0 lg:ml-auto mb-4 leading-relaxed">
                             I build{" "}
                             <span className="highlight-pill">seamlessly scalable</span>
                             {" "}digital experiences and{" "}

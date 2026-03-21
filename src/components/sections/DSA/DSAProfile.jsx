@@ -9,14 +9,14 @@ const DSAProfile = () => {
     const totalSolved = profile.dsaStats.reduce((acc, curr) => acc + curr.problemsSolved, 0);
 
     return (
-        <section id="dsa" className="py-12 relative overflow-hidden bg-bg-secondary/60">
+        <section id="dsa" className="py-10 sm:py-12 relative overflow-hidden bg-bg-secondary/60">
             {/* Background Decorations */}
             <div className="absolute top-40 right-10 w-64 h-64 bg-accent-teal/5 rounded-full blur-3xl" />
             <div className="absolute bottom-20 left-10 w-48 h-48 bg-accent-gold/5 rounded-full blur-3xl" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
                         <BouncyText text="DSA " />
                         <span className="highlight-pill-teal"><BouncyText text="Statistics" colorOffset={4} /></span>
                     </h2>
@@ -67,7 +67,7 @@ const DSAProfile = () => {
                                     {stat.platform}
                                 </a>
 
-                                <div className="text-4xl font-black text-text-primary mb-1 tracking-tighter" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                <div className="text-3xl sm:text-4xl font-black text-text-primary mb-1 tracking-tighter" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
                                     {stat.problemsSolved}
                                 </div>
                                 <div className="text-text-secondary text-[9px] font-black uppercase tracking-widest opacity-60">Problems Solved</div>
@@ -95,12 +95,12 @@ const DSAProfile = () => {
                     </motion.div>
 
                     {/* Chart Area */}
-                    <div className="relative p-8 bg-white rounded-[2.5rem] border-[3px] border-[#1A1A1A] shadow-[10px 10px 0px #1A535C] overflow-hidden group">
+                    <div className="relative p-6 sm:p-8 bg-white rounded-[2.5rem] border-[3px] border-[#1A1A1A] shadow-[10px 10px 0px #1A535C] overflow-hidden group">
                         {/* Decorative Chart Background */}
                         <div className="absolute top-0 right-0 w-32 h-32 bg-accent-teal/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700" />
                         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent-gold/10 rounded-full blur-2xl" />
 
-                        <div className="h-[320px] w-full relative z-10">
+                        <div className="h-[260px] sm:h-[320px] w-full relative z-10">
                             <ResponsiveContainer width="100%" height="100%">
                                 <PieChart>
                                     <Pie
@@ -145,7 +145,7 @@ const DSAProfile = () => {
                                     {/* Rotating Ring around total */}
                                     <div className="absolute -inset-8 rounded-full border-2 border-dashed border-gray-100 animate-spin-slow opacity-50" />
 
-                                    <div className="text-5xl font-black text-text-primary leading-none" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
+                                    <div className="text-4xl sm:text-5xl font-black text-text-primary leading-none" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
                                         {totalSolved}
                                     </div>
                                     <div className="text-[10px] font-black text-text-secondary uppercase tracking-[0.2em] mt-2 opacity-50">Total<br />Solved</div>

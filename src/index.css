@@ -215,10 +215,10 @@
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .card-retro:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 8px 8px 0px #1A535C;
-  }
+.card-retro:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #1A535C;
+}
 
   /* === Typography Extras === */
   .highlight-pill {
@@ -318,6 +318,22 @@
 .ach-slide {
   position: absolute;
   inset: 0;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card-premium,
+  .card-retro {
+    padding: 1.5rem;
+  }
+
+  .ach-stack {
+    min-height: 260px;
+  }
 }
 
 

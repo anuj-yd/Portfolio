@@ -13,13 +13,13 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="py-12 relative overflow-hidden">
+        <section id="about" className="py-10 sm:py-12 relative overflow-hidden">
             <div className="absolute top-12 left-10 w-48 h-48 bg-accent-teal/5 rounded-full blur-3xl" />
             <div className="absolute bottom-10 right-12 w-56 h-56 bg-accent-gold/10 rounded-full blur-3xl" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 heading-reveal-target">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black mb-5 heading-reveal-target">
                         <BouncyText text="About " />
                         <span className="highlight-pill-teal"><BouncyText text="Me" colorOffset={6} /></span>
                     </h2>
@@ -90,7 +90,7 @@ const About = () => {
 
                 <div className="mt-32">
                     <div className="text-center mb-16">
-                        <h3 className="text-3xl md:text-4xl font-display font-black text-text-primary mb-4">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-black text-text-primary mb-4">
                             My Professional <span className="highlight-pill-orange">Journey</span>
                         </h3>
                         <p className="text-sm font-bold text-text-secondary uppercase tracking-[0.3em] opacity-40">Milestones & Growth</p>

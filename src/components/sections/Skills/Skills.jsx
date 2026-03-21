@@ -57,11 +57,11 @@ const Skills = () => {
             {/* Background Decorative Elements */}
             <div className="absolute top-20 left-10 w-32 h-32 bg-accent-teal/5 rounded-full blur-3xl" />
             <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent-pink/5 rounded-full blur-3xl" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-gold/3 border-[1px] border-dashed border-accent-gold/20 rounded-full animate-spin-slow pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] sm:w-[600px] sm:h-[600px] bg-accent-gold/3 border-[1px] border-dashed border-accent-gold/20 rounded-full animate-spin-slow pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 heading-reveal-target">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black mb-5 heading-reveal-target">
                         <BouncyText text="My " />
                         <span className="highlight-pill-teal"><BouncyText text="Skills" colorOffset={3} /></span>
                     </h2>
@@ -117,7 +117,7 @@ const Skills = () => {
                                         key={`rowA-${skill.name}-${i}`}
                                         variants={itemVariants}
                                         whileHover={{ y: -8, rotate: 0.5 }}
-                                        className="bg-white rounded-3xl p-8 relative overflow-hidden group border-[3px] border-[#1A1A1A] min-w-[320px]"
+                                        className="bg-white rounded-3xl p-6 sm:p-8 relative overflow-hidden group border-[3px] border-[#1A1A1A] min-w-[260px] sm:min-w-[320px]"
                                         style={{ boxShadow: `8px 8px 0px ${skillColor}` }}
                                     >
                                         <div

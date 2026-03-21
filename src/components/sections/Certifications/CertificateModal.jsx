@@ -35,7 +35,7 @@ const CertificateModal = ({ isOpen, onClose, certUrl, certTitle }) => {
                         initial={{ scale: 0.9, opacity: 0, y: 20 }}
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                        className="relative bg-white w-full max-w-5xl h-[90vh] rounded-3xl overflow-hidden border-4 border-black shadow-[15px 15px 0px #1A535C] flex flex-col"
+                        className="relative bg-white w-full max-w-5xl h-[85vh] sm:h-[90vh] rounded-2xl sm:rounded-3xl overflow-hidden border-4 border-black shadow-[15px 15px 0px #1A535C] flex flex-col"
                     >
                         {/* Header */}
                         <div className="flex items-center justify-between p-5 border-b-2 border-black/10 bg-bg-primary">

@@ -12,7 +12,7 @@ const Projects = () => {
         <section id="projects" className="py-10 relative overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
                         <BouncyText text="Featured " />
                         <span className="highlight-pill-pink"><BouncyText text="Projects" colorOffset={9} /></span>
                     </h2>

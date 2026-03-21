@@ -10,17 +10,14 @@ const Certifications = () => {
     const [selectedCert, setSelectedCert] = useState(null);
 
     return (
-        <section id="certifications" className="py-10 relative overflow-hidden bg-bg-primary">
+        <section id="certifications" className="py-10 relative overflow-hidden bg-bg-secondary/30">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
-                        <BouncyText text="My " />
-                        <span className="highlight-pill-orange"><BouncyText text="Certifications" colorOffset={3} /></span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
+                        <BouncyText text="Key " />
+                        <span className="highlight-pill-pink"><BouncyText text="Certifications" colorOffset={4} className="text-white" /></span>
                     </h2>
                     <div className="section-divider" />
-                    <p className="max-w-xl mx-auto text-text-secondary font-medium text-lg mt-6">
-                        Validation of my skills and continuous learning journey through industry-recognized certifications.
-                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -31,7 +28,7 @@ const Certifications = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="relative h-[470px] group [perspective:1200px]"
+                            className="relative h-[420px] sm:h-[470px] group [perspective:1200px]"
                         >
                             <div className="cert-flip-card">
                                 {/* Front */}
