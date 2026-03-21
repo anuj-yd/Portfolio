@@ -13,7 +13,7 @@ const Certifications = () => {
         <section id="certifications" className="py-10 relative overflow-hidden bg-bg-primary">
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary">
+                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
                         <BouncyText text="My " />
                         <span className="highlight-pill-orange"><BouncyText text="Certifications" colorOffset={3} /></span>
                     </h2>

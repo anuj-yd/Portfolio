@@ -61,7 +61,7 @@ const Skills = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5">
+                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 heading-reveal-target">
                         <BouncyText text="My " />
                         <span className="highlight-pill-teal"><BouncyText text="Skills" colorOffset={3} /></span>
                     </h2>

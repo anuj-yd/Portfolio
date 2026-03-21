@@ -16,7 +16,7 @@ const DSAProfile = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary">
+                    <h2 className="text-4xl md:text-5xl font-display font-black mb-5 text-text-primary heading-reveal-target">
                         <BouncyText text="DSA " />
                         <span className="highlight-pill-teal"><BouncyText text="Statistics" colorOffset={4} /></span>
                     </h2>

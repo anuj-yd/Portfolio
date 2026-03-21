@@ -46,6 +46,18 @@ const PageTransition = ({ children }) => {
             });
         });
 
+        // Heading reveal: apply tracking-in-expand-fwd-top on scroll for main headings only
+        const headingEls = document.querySelectorAll('.heading-reveal-target');
+        headingEls.forEach((el) => {
+            el.classList.add('heading-reveal');
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 92%',
+                onEnter: () => el.classList.add('heading-reveal-active'),
+                once: true,
+            });
+        });
+
         // Ensure all triggers are calculated correctly after elements are rendered
         setTimeout(() => {
             ScrollTrigger.refresh();
