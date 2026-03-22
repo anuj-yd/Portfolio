@@ -293,11 +293,12 @@
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.7s ease;
+  transition: none;
 }
 
 .group:hover .cert-flip-card {
-  transform: rotateY(180deg);
+  -webkit-animation: flip-scale-down-vert-1 0.7s ease both;
+  animation: flip-scale-down-vert-1 0.7s ease both;
 }
 
 .cert-face {
@@ -307,7 +308,7 @@
 }
 
 .cert-back {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
 /* === Achievement Sliding Stack === */
@@ -338,6 +339,40 @@
 
 
 /* === Animations === */
+@-webkit-keyframes flip-scale-down-vert-1 {
+  0% {
+    -webkit-transform: scale(1) rotate3d(1, 0, 0, 0deg);
+    transform: scale(1) rotate3d(1, 0, 0, 0deg);
+  }
+
+  50% {
+    -webkit-transform: scale(0.4) rotate3d(1, 0, 0, -90deg);
+    transform: scale(0.4) rotate3d(1, 0, 0, -90deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate3d(1, 0, 0, -180deg);
+    transform: scale(1) rotate3d(1, 0, 0, -180deg);
+  }
+}
+
+@keyframes flip-scale-down-vert-1 {
+  0% {
+    -webkit-transform: scale(1) rotate3d(1, 0, 0, 0deg);
+    transform: scale(1) rotate3d(1, 0, 0, 0deg);
+  }
+
+  50% {
+    -webkit-transform: scale(0.4) rotate3d(1, 0, 0, -90deg);
+    transform: scale(0.4) rotate3d(1, 0, 0, -90deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate3d(1, 0, 0, -180deg);
+    transform: scale(1) rotate3d(1, 0, 0, -180deg);
+  }
+}
+
 @keyframes float {
 
   0%,
