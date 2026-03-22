@@ -2,19 +2,19 @@
 import { motion } from 'framer-motion';
 import { HiOutlineMail, HiOutlineLocationMarker } from 'react-icons/hi';
 import { SiLinkedin, SiWhatsapp, SiGithub } from 'react-icons/si';
-import { useEmailJS } from '../../../hooks/useEmailJS';
+import { useFormspree } from '../../../hooks/useFormspree';
 import Button from '../../ui/Button';
 import BouncyText from '../../ui/BouncyText';
 
 const Contact = () => {
-    const { sendEmail, submitting } = useEmailJS();
+    const { sendMessage, submitting } = useFormspree();
     const [status, setStatus] = useState(null);
     const [hoverRating, setHoverRating] = useState(null);
     const [formData, setFormData] = useState({ name: '', email: '', message: '', rating: '' });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const result = await sendEmail(formData);
+        const result = await sendMessage(formData);
         if (result.success) {
             setStatus({
                 type: 'success',
