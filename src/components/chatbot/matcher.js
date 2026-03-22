@@ -127,7 +127,7 @@ export const findAnswer = (question, profile) => {
 
   // Experience / work
   if (normalized.includes('experience') || normalized.includes('internship') || normalized.includes('intern') || normalized.includes('job') || normalized.includes('work experience')) {
-    return `💼 Anuj is currently a student and has built strong practical experience through personal projects including a MERN stack wellness platform, algorithm visualizers, and volunteer management systems. He's actively looking for internship and full-time opportunities!\n\n📬 Reach him at: ${profile.basics.email}`;
+    return `💼 Anuj is a fresher with no prior work experience, but has built strong practical skills through personal projects including a MERN stack wellness platform, algorithm visualizers, and volunteer management systems. He's actively looking for internship and full-time opportunities!\n\n📬 Reach him at: ${profile.basics.email}`;
   }
 
   // Location

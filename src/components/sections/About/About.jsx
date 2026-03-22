@@ -6,9 +6,8 @@ import BouncyText from '../../ui/BouncyText';
 
 const About = () => {
     const stats = [
-        { label: 'Years of Experience', value: '3', suffix: '+' },
-        { label: 'Projects Completed', value: '15', suffix: '+' },
         { label: 'DSA Problems', value: '700', suffix: '+' },
+        { label: 'Projects Completed', value: '5', suffix: '+' },
         { label: 'Technologies', value: '10', suffix: '+' },
     ];
 
@@ -38,15 +37,15 @@ const About = () => {
                                 Passionate developer crafting <span className="text-accent-teal italic">digital experiences</span>
                             </h3>
                             <p className="text-lg text-text-secondary mb-6 leading-relaxed">
-                                I am a MERN Stack Developer who builds full-stack applications with a strong
+                                I am a MERN Stack Developer and a fresher who builds full-stack applications with a strong
                                 foundation in Data Structures and Algorithms. I work with React, Node.js,
                                 Express, and MongoDB, and I focus on modular, scalable systems, secure APIs,
                                 and smooth user experiences.
                             </p>
                             <p className="text-lg text-text-secondary mb-10 leading-relaxed">
-                                I have delivered projects like a MERN mental health assessment platform,
-                                a shortest-path visualizer using Dijkstra's algorithm, and a volunteer
-                                management system with authentication and certificates. I enjoy solving
+                                As a fresher with no prior work experience, I have delivered personal projects like a MERN
+                                mental health assessment platform, a shortest-path visualizer using Dijkstra's algorithm,
+                                and a volunteer management system with authentication and certificates. I enjoy solving
                                 problems, learning fast, and turning ideas into reliable, production-ready products.
                             </p>
                         </div>
@@ -56,7 +55,9 @@ const About = () => {
                                 <motion.div
                                     key={i}
                                     whileHover={{ y: -6, scale: 1.02 }}
-                                    className="bg-white rounded-full p-4 relative overflow-hidden group border-2 border-black aspect-square flex items-center justify-center w-40 h-40 md:w-44 md:h-44 scroll-fade-card"
+                                    className={`bg-white rounded-full p-4 relative overflow-hidden group border-2 border-black aspect-square flex items-center justify-center w-40 h-40 md:w-44 md:h-44 scroll-fade-card ${
+                                        i === 0 ? 'col-span-2 justify-self-center' : ''
+                                    }`}
                                     style={{
                                         boxShadow: `8px 8px 0px ${['#F4833D', '#F4C430', '#1A535C', '#E8699A'][i % 4]}`,
                                     }}

@@ -139,11 +139,7 @@ const Hero = () => {
                             Open to Work! 🚀
                         </div>
 
-                        {/* Exp row */}
-                        <div ref={statsRef} className="flex items-baseline gap-3 mb-6" style={{ opacity: 0 }}>
-                            <span className="text-4xl sm:text-5xl font-display font-black text-text-primary">01+</span>
-                            <div className="text-xs uppercase tracking-widest font-black text-text-secondary leading-tight">YEARS<br />EXPERIENCE</div>
-                        </div>
+                        <div ref={statsRef} className="h-6 mb-6" style={{ opacity: 0 }} />
 
                         {/* CTAs */}
                         <div ref={btnsRef} className="flex gap-4 flex-wrap" style={{ opacity: 0 }}>
