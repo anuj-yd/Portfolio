@@ -1,8 +1,8 @@
-ï»¿# Anuj Yadav â€¢ Portfolio
+# Anuj Yadav • Portfolio
 
 A modern, animated, and responsive developer portfolio built with React + Vite. It showcases projects, skills, certifications, DSA stats, and a Gemini-powered chatbot that answers based on portfolio data.
 
-## Whatâ€™s Inside
+## What’s Inside
 
 - Hero, About, Skills, Projects, DSA, Achievements, Certifications, Resume, Contact
 - Floating chatbot with Gemini API (serverless)
@@ -19,7 +19,7 @@ Deployed URL: `https://anuj-yd.vercel.app`
 
 ![Home](image.png)
 
-The hero section introduces the portfolio with a bold headline, animated accents, and quick visual context about the developer. Itâ€™s designed to feel energetic and immediately communicate the tech-forward style of the site.
+The hero section introduces the portfolio with a bold headline, animated accents, and quick visual context about the developer. It’s designed to feel energetic and immediately communicate the tech-forward style of the site.
 
 ## Tech Stack
 
@@ -27,7 +27,7 @@ The hero section introduces the portfolio with a bold headline, animated accents
 - Tailwind CSS v4, Styled Components
 - Framer Motion, GSAP, Anime.js, Lottie
 - Recharts, react-scroll, react-icons
-- EmailJS for contact form
+- Formspree for contact form
 
 ## Quick Start
 
@@ -43,10 +43,9 @@ npm run dev
 Create a `.env` file in the project root:
 
 ```env
-# EmailJS
-VITE_EMAILJS_SERVICE_ID=
-VITE_EMAILJS_TEMPLATE_ID=
-VITE_EMAILJS_PUBLIC_KEY=
+# Formspree
+VITE_FORMSPREE_ENDPOINT=
+VITE_FORMSPREE_FORM_ID=
 
 # Gemini (serverless)
 GEMINI_API_KEY=
@@ -61,41 +60,24 @@ This project uses a Vercel serverless function for Gemini:
 - Portfolio data is injected server-side
 - Frontend calls `/api/chat`
 
-When deploying on Vercel, add `GEMINI_API_KEY` in Project Settings â†’ Environment Variables and redeploy.
+When deploying on Vercel, add `GEMINI_API_KEY` in Project Settings ? Environment Variables and redeploy.
 
-## EmailJS Template Variables
+## Formspree Setup
 
-The contact form sends these fields:
-
-```text
-to_email
-from_name
-from_email
-message
-reply_to
-rating
-```
-
-## EmailJS Production Setup
-
-To ensure the contact form works in production:
-
-1. Add your domain to EmailJS â†’ Service â†’ `Allowed Domains`
-2. Set the following env vars in your hosting provider and redeploy:
-   - `VITE_EMAILJS_SERVICE_ID`
-   - `VITE_EMAILJS_TEMPLATE_ID`
-   - `VITE_EMAILJS_PUBLIC_KEY`
-3. Keep the EmailJS template variables exactly as listed above
+1. Create a form in Formspree and copy the endpoint URL.
+2. Add the endpoint to your hosting provider environment:
+   - `VITE_FORMSPREE_ENDPOINT`
+3. Redeploy after adding the environment variable.
 
 ## Project Structure
 
 ```text
 src/
 +-- components/
-Â¦   +-- chatbot/
-Â¦   +-- layout/
-Â¦   +-- sections/
-Â¦   +-- ui/
+¦   +-- chatbot/
+¦   +-- layout/
+¦   +-- sections/
+¦   +-- ui/
 +-- data/
 +-- hooks/
 +-- App.jsx
@@ -133,3 +115,4 @@ Anuj Yadav
 ## License
 
 MIT
+
